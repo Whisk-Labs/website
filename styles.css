@@ -20,7 +20,6 @@
   --btn-secondary-hover: #ebe3d8;
   --phone-frame: #2a2420;
   --shadow: rgba(28, 24, 20, 0.06);
-  --logo-bg: transparent;
   --illo-stroke: #6b8f5a;
   --illo-opacity: 0.55;
   --illo-dot: rgba(107, 143, 90, 0.18);
@@ -52,7 +51,6 @@
   --btn-secondary-hover: #352e28;
   --phone-frame: #0f0d0b;
   --shadow: rgba(0, 0, 0, 0.35);
-  --logo-bg: #ffffff;
   --illo-stroke: #9cb07d;
   --illo-opacity: 0.45;
   --illo-dot: rgba(156, 176, 125, 0.12);
@@ -129,10 +127,6 @@ a {
   height: 44px;
   width: auto;
   max-width: min(220px, 52vw);
-  background: var(--logo-bg);
-  border-radius: 8px;
-  padding: 4px 8px;
-  transition: background 0.25s ease;
 }
 
 .logo-img--footer {

@@ -82,16 +82,17 @@ a {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--text);
   justify-self: center;
 }
 
-.logo-icon {
-  color: var(--accent);
+.logo-img {
+  display: block;
+  height: 36px;
+  width: auto;
+}
+
+.logo-img--footer {
+  height: 30px;
 }
 
 .header-actions {
@@ -955,7 +956,7 @@ a {
 }
 
 .logo--footer {
-  font-size: 16px;
+  margin-bottom: 4px;
 }
 
 .footer-col h3 {

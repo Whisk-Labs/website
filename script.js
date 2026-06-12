@@ -15,6 +15,35 @@ function initLogos() {
   });
 }
 
+function getTheme() {
+  return document.documentElement.getAttribute("data-theme") === "dark"
+    ? "dark"
+    : "light";
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("whisk-theme", theme);
+
+  const isDark = theme === "dark";
+  const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+
+  const toggle = document.getElementById("theme-toggle");
+  if (toggle) toggle.setAttribute("aria-label", label);
+
+  const mobileToggle = document.getElementById("mobile-theme-toggle");
+  if (mobileToggle) mobileToggle.textContent = label;
+}
+
+function initTheme() {
+  const toggle = () => setTheme(getTheme() === "dark" ? "light" : "dark");
+
+  document.getElementById("theme-toggle")?.addEventListener("click", toggle);
+  document.getElementById("mobile-theme-toggle")?.addEventListener("click", toggle);
+
+  setTheme(getTheme());
+}
+
 const PRODUCTS = {
   managers: [
     {
@@ -257,6 +286,7 @@ function initPersonaTabs() {
 }
 
 initLogos();
+initTheme();
 initYear();
 initMobileNav();
 initForecastToggles();

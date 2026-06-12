@@ -1,8 +1,10 @@
-:root {
+:root,
+[data-theme="light"] {
   --bg: #faf7f2;
   --bg-white: #ffffff;
   --bg-muted: #f3ede4;
   --bg-card: #f8f4ee;
+  --header-bg: rgba(255, 255, 255, 0.92);
   --border: rgba(28, 24, 20, 0.08);
   --border-strong: rgba(28, 24, 20, 0.14);
   --text: #1c1814;
@@ -14,11 +16,40 @@
   --accent-illo: rgba(196, 112, 58, 0.35);
   --chart-actual: rgba(28, 24, 20, 0.25);
   --chart-forecast: #c4703a;
+  --btn-secondary-bg: #f3ede4;
+  --btn-secondary-hover: #ebe3d8;
+  --phone-frame: #2a2420;
+  --shadow: rgba(28, 24, 20, 0.06);
+  --logo-bg: transparent;
   --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --max: 1080px;
   --radius: 20px;
   --radius-sm: 12px;
   --radius-pill: 999px;
+}
+
+[data-theme="dark"] {
+  --bg: #12100e;
+  --bg-white: #1a1714;
+  --bg-muted: #221e1a;
+  --bg-card: #1f1b17;
+  --header-bg: rgba(18, 16, 14, 0.94);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --text: #f5f0e8;
+  --text-muted: rgba(245, 240, 232, 0.68);
+  --text-faint: rgba(245, 240, 232, 0.42);
+  --accent: #d4844a;
+  --accent-hover: #e09558;
+  --accent-soft: rgba(212, 132, 74, 0.14);
+  --accent-illo: rgba(212, 132, 74, 0.4);
+  --chart-actual: rgba(245, 240, 232, 0.28);
+  --chart-forecast: #d4844a;
+  --btn-secondary-bg: #2a2420;
+  --btn-secondary-hover: #352e28;
+  --phone-frame: #0f0d0b;
+  --shadow: rgba(0, 0, 0, 0.35);
+  --logo-bg: #ffffff;
 }
 
 *,
@@ -39,6 +70,7 @@ body {
   color: var(--text);
   background: var(--bg-white);
   -webkit-font-smoothing: antialiased;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 a {
@@ -52,9 +84,10 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--header-bg);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
 .header-inner {
@@ -90,11 +123,58 @@ a {
   height: 44px;
   width: auto;
   max-width: min(220px, 52vw);
+  background: var(--logo-bg);
+  border-radius: 8px;
+  padding: 4px 8px;
+  transition: background 0.25s ease;
 }
 
 .logo-img--footer {
   height: 36px;
   max-width: 200px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--bg-muted);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.theme-icon {
+  display: none;
+}
+
+[data-theme="light"] .theme-icon--moon,
+[data-theme="dark"] .theme-icon--sun {
+  display: block;
+}
+
+.mobile-theme-toggle {
+  margin-top: 8px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-muted);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: left;
 }
 
 .header-actions {
@@ -183,12 +263,12 @@ a {
 }
 
 .btn-secondary {
-  background: var(--bg-muted);
+  background: var(--btn-secondary-bg);
   color: var(--text);
 }
 
 .btn-secondary:hover {
-  background: #ebe3d8;
+  background: var(--btn-secondary-hover);
 }
 
 .btn-sm {
@@ -317,7 +397,7 @@ a {
   font-size: 13px;
   font-weight: 600;
   text-align: left;
-  box-shadow: 0 4px 20px rgba(28, 24, 20, 0.04);
+  box-shadow: 0 4px 20px var(--shadow);
   transition: border-color 0.2s, transform 0.2s;
 }
 
@@ -640,7 +720,7 @@ a {
 .persona-tab.is-active {
   background: var(--bg-white);
   color: var(--text);
-  box-shadow: 0 1px 4px rgba(28, 24, 20, 0.06);
+  box-shadow: 0 1px 4px var(--shadow);
 }
 
 .products-body {
@@ -726,9 +806,9 @@ a {
   z-index: 2;
   width: 220px;
   padding: 12px;
-  background: #2a2420;
+  background: var(--phone-frame);
   border-radius: 28px;
-  box-shadow: 0 24px 60px rgba(28, 24, 20, 0.15);
+  box-shadow: 0 24px 60px var(--shadow);
 }
 
 .phone-screen {

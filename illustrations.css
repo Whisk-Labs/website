@@ -1,0 +1,321 @@
+/* Decorative line-art layer — Guac-inspired */
+
+.section-deco {
+  position: relative;
+  overflow: hidden;
+}
+
+.deco-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.deco-layer + * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-deco > .deco-dots,
+.deco-layer .deco-dots {
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  background-image: radial-gradient(var(--illo-dot) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.illo {
+  position: absolute;
+  color: var(--illo-stroke);
+  opacity: var(--illo-opacity);
+}
+
+.illo svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.illo--float {
+  animation: illo-float 7s ease-in-out infinite;
+}
+
+.illo--float-slow {
+  animation: illo-float 9s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.illo--float-delay {
+  animation: illo-float 8s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+@keyframes illo-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+/* Hero */
+
+.hero {
+  min-height: 62vh;
+  padding: 64px 24px 72px;
+}
+
+.hero-illo {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: var(--illo-opacity);
+  color: var(--illo-stroke);
+}
+
+.hero-illo svg {
+  width: clamp(150px, 22vw, 280px);
+}
+
+.hero-illo--tl {
+  top: 4%;
+  left: 1%;
+  transform: rotate(-4deg);
+}
+
+.hero-illo--tr {
+  top: 2%;
+  right: 0;
+  transform: rotate(3deg);
+}
+
+.hero-illo--ml {
+  top: 42%;
+  left: -2%;
+  transform: rotate(-2deg);
+}
+
+.hero-illo--mr {
+  top: 38%;
+  right: -1%;
+  transform: rotate(2deg);
+}
+
+.hero-illo--bl {
+  bottom: 4%;
+  left: 3%;
+  transform: rotate(2deg);
+}
+
+.hero-illo--br {
+  bottom: 2%;
+  right: 2%;
+  transform: rotate(-3deg);
+}
+
+/* Suite */
+
+.suite-section {
+  padding: 72px 24px 64px;
+  max-width: none;
+}
+
+.suite-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.suite-deco--left {
+  width: clamp(140px, 16vw, 220px);
+  left: 4%;
+  top: 18%;
+}
+
+.suite-deco--right {
+  width: clamp(130px, 14vw, 200px);
+  right: 5%;
+  bottom: 12%;
+}
+
+.suite-deco--top {
+  width: clamp(100px, 12vw, 160px);
+  right: 18%;
+  top: 8%;
+}
+
+/* Forecast */
+
+.forecast-deco--left {
+  width: clamp(120px, 14vw, 180px);
+  left: 2%;
+  top: 20%;
+}
+
+.forecast-deco--right {
+  width: clamp(110px, 13vw, 170px);
+  right: 3%;
+  bottom: 15%;
+}
+
+.forecast-deco--cloud {
+  width: 90px;
+  left: 12%;
+  bottom: 20%;
+}
+
+/* Results */
+
+.results-deco--left {
+  width: clamp(130px, 15vw, 190px);
+  left: 3%;
+  top: 10%;
+}
+
+.results-deco--right {
+  width: clamp(120px, 14vw, 175px);
+  right: 4%;
+  bottom: 18%;
+}
+
+/* Variables */
+
+.variables-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.variables-deco {
+  width: clamp(90px, 10vw, 130px);
+}
+
+.variables-deco--1 {
+  left: 8%;
+  top: 15%;
+}
+
+.variables-deco--2 {
+  right: 10%;
+  top: 20%;
+}
+
+.variables-deco--3 {
+  left: 12%;
+  bottom: 18%;
+}
+
+.variables-deco--4 {
+  right: 8%;
+  bottom: 15%;
+}
+
+.variables-deco--5 {
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+  width: 70px;
+}
+
+/* About */
+
+.about-deco--left {
+  width: clamp(110px, 12vw, 160px);
+  left: 5%;
+  bottom: 20%;
+}
+
+.about-deco--right {
+  width: clamp(100px, 11vw, 150px);
+  right: 6%;
+  top: 15%;
+}
+
+/* Products */
+
+.products-section {
+  position: relative;
+}
+
+.products-deco--left {
+  width: clamp(100px, 11vw, 140px);
+  left: 5%;
+  top: 10%;
+}
+
+.products-deco--right {
+  width: clamp(90px, 10vw, 120px);
+  right: 6%;
+  bottom: 12%;
+}
+
+.products-card {
+  position: relative;
+  z-index: 1;
+}
+
+/* CTA */
+
+.cta-illo svg {
+  width: clamp(90px, 12vw, 140px);
+}
+
+@media (max-width: 1100px) {
+  .hero-illo--ml,
+  .hero-illo--mr,
+  .suite-deco--top,
+  .forecast-deco--cloud,
+  .variables-deco--5 {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: auto;
+    padding: 48px 20px 56px;
+  }
+
+  .hero-illo svg {
+    width: clamp(100px, 28vw, 140px);
+    opacity: 0.55;
+  }
+
+  .hero-illo--tl {
+    top: 2%;
+    left: -4%;
+  }
+
+  .hero-illo--tr {
+    top: 1%;
+    right: -6%;
+  }
+
+  .hero-illo--bl {
+    bottom: 2%;
+    left: -2%;
+  }
+
+  .hero-illo--br {
+    bottom: 1%;
+    right: -4%;
+  }
+
+  .deco-layer .illo:not(.hero-illo) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .illo--float,
+  .illo--float-slow,
+  .illo--float-delay {
+    animation: none;
+  }
+}

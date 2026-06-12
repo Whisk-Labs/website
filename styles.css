@@ -21,6 +21,9 @@
   --phone-frame: #2a2420;
   --shadow: rgba(28, 24, 20, 0.06);
   --logo-bg: transparent;
+  --illo-stroke: #6b8f5a;
+  --illo-opacity: 0.55;
+  --illo-dot: rgba(107, 143, 90, 0.18);
   --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --max: 1080px;
   --radius: 20px;
@@ -50,6 +53,9 @@
   --phone-frame: #0f0d0b;
   --shadow: rgba(0, 0, 0, 0.35);
   --logo-bg: #ffffff;
+  --illo-stroke: #9cb07d;
+  --illo-opacity: 0.45;
+  --illo-dot: rgba(156, 176, 125, 0.12);
 }
 
 *,
@@ -285,11 +291,9 @@ a {
 
 .hero {
   position: relative;
-  min-height: 72vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 24px 100px;
   overflow: hidden;
 }
 
@@ -324,30 +328,10 @@ a {
   justify-content: center;
 }
 
-.hero-illo {
-  position: absolute;
-  color: var(--accent-illo);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.hero-illo svg {
-  width: clamp(120px, 18vw, 200px);
-  height: auto;
-}
-
-.hero-illo--tl { top: 8%; left: 4%; }
-.hero-illo--tr { top: 10%; right: 4%; }
-.hero-illo--bl { bottom: 10%; left: 6%; }
-.hero-illo--br { bottom: 8%; right: 6%; }
-
 /* Suite */
 
 .suite-section {
-  padding: 100px 24px 80px;
   text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .suite-icon {
@@ -355,8 +339,8 @@ a {
   margin-bottom: 24px;
 }
 
-.suite-section h2 {
-  margin: 0 0 64px;
+.suite-inner h2 {
+  margin: 0 0 48px;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 700;
   line-height: 1.2;
@@ -425,7 +409,7 @@ a {
 /* Forecast */
 
 .forecast-section {
-  padding: 80px 24px;
+  padding: 64px 24px;
   background: var(--bg);
 }
 
@@ -574,7 +558,7 @@ a {
 /* Results */
 
 .results-section {
-  padding: 80px 24px;
+  padding: 64px 24px;
 }
 
 .results-inner {
@@ -862,7 +846,7 @@ a {
 /* Variables */
 
 .variables-section {
-  padding: 80px 24px;
+  padding: 64px 24px;
   text-align: center;
 }
 
@@ -916,7 +900,7 @@ a {
 /* About */
 
 .about-section {
-  padding: 80px 24px;
+  padding: 64px 24px;
   background: var(--bg);
 }
 
@@ -1001,7 +985,8 @@ a {
 
 .cta-illo {
   position: absolute;
-  color: var(--accent-illo);
+  color: var(--illo-stroke);
+  opacity: var(--illo-opacity);
   pointer-events: none;
 }
 

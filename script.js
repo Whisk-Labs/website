@@ -1,3 +1,20 @@
+function siteBase() {
+  if (location.hostname.endsWith("github.io")) {
+    const segment = location.pathname.split("/").filter(Boolean)[0];
+    return segment ? `/${segment}/` : "/";
+  }
+
+  return "/";
+}
+
+function initLogos() {
+  const base = siteBase();
+  ["site-logo", "footer-logo"].forEach((id) => {
+    const img = document.getElementById(id);
+    if (img) img.src = `${base}assets/logo.png`;
+  });
+}
+
 const PRODUCTS = {
   managers: [
     {
@@ -239,6 +256,7 @@ function initPersonaTabs() {
   updatePhonePreview("managers");
 }
 
+initLogos();
 initYear();
 initMobileNav();
 initForecastToggles();

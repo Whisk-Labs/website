@@ -9,9 +9,15 @@ function siteBase() {
 
 function initLogos() {
   const base = siteBase();
+  const logoUrl = `${base}assets/logo.png?v=2`;
+
   ["site-logo", "footer-logo"].forEach((id) => {
     const img = document.getElementById(id);
-    if (img) img.src = `${base}assets/logo.png`;
+    if (!img) return;
+    img.src = logoUrl;
+    img.addEventListener("error", () => {
+      img.src = `${base}assets/logo.png`;
+    });
   });
 }
 

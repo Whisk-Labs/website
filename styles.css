@@ -125,9 +125,10 @@ a {
 
 .logo-img {
   display: block;
-  height: 44px;
+  height: 40px;
   width: auto;
-  max-width: min(220px, 52vw);
+  max-width: min(168px, 40vw);
+  object-fit: contain;
 }
 
 .logo-img--footer {
@@ -294,6 +295,28 @@ a {
   margin: 0 auto;
   padding: 64px 24px 72px;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 90% 82% at 50% 52%,
+    var(--bg-white) 35%,
+    transparent 78%
+  );
+}
+
+@media (min-width: 961px) {
+  .hero::before {
+    background:
+      radial-gradient(ellipse 68% 62% at 26% 46%, var(--bg-white) 52%, transparent 76%),
+      radial-gradient(ellipse 48% 58% at 82% 42%, var(--bg-white) 42%, transparent 74%);
+  }
 }
 
 .hero-content {
@@ -1602,7 +1625,19 @@ textarea {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1040px) {
+  .header-nav--left {
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .logo-img {
+    height: 34px;
+    max-width: 148px;
+  }
+}
+
+@media (max-width: 860px) {
   .header-inner {
     grid-template-columns: 1fr auto;
   }
@@ -1621,11 +1656,9 @@ textarea {
     display: flex;
     grid-column: 2;
   }
+}
 
-  .hero-illo {
-    opacity: 0.4;
-  }
-
+@media (max-width: 720px) {
   .problem-grid,
   .flow-stage--bottom,
   .integration-grid {

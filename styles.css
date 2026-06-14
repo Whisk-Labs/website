@@ -64,6 +64,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: var(--font);
 }
 
 body {
@@ -489,55 +490,144 @@ a {
   white-space: nowrap;
 }
 
-/* Pipeline */
+button,
+input,
+select,
+textarea {
+  font-family: var(--font);
+}
 
-.pipeline {
+/* Solution flow */
+
+.solution-flow {
+  max-width: 820px;
+  margin: 40px auto 0;
+}
+
+.flow-stage--top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.flow-stage--bottom {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
-  margin: 32px 0 48px;
-  text-align: left;
 }
 
-.pipeline-step {
-  padding: 20px;
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  transition: border-color 0.2s ease;
-}
-
-.pipeline-step:hover {
-  border-color: var(--accent);
-}
-
-.pipeline-num {
+.flow-node {
   display: block;
-  margin-bottom: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--accent);
+  padding: 20px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-white);
+  text-align: center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.pipeline-step h3 {
-  margin: 0 0 6px;
+.flow-node--brand {
+  font-weight: 700;
+  min-width: 120px;
+}
+
+.flow-node--core {
+  border-color: rgba(196, 112, 58, 0.45);
+  background: var(--accent-soft);
+  min-width: 180px;
+}
+
+.flow-node--output {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.flow-node--output:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.flow-node-label {
+  display: block;
   font-size: 14px;
   font-weight: 600;
 }
 
-.pipeline-step p {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.45;
+.flow-node-sub {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.4;
   color: var(--text-muted);
 }
 
-.suite-subhead {
-  margin: 0 0 40px;
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.flow-arrow {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.flow-split {
+  position: relative;
+  height: 52px;
+  max-width: 72%;
+  margin: 0 auto;
+}
+
+.flow-split-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 22px;
+  background: var(--illo-stroke);
+  opacity: 0.5;
+  transform: translateX(-50%);
+}
+
+.flow-split-bar {
+  position: absolute;
+  left: 16.66%;
+  right: 16.66%;
+  top: 22px;
+  height: 2px;
+  background: var(--illo-stroke);
+  opacity: 0.5;
+}
+
+.flow-split-branch {
+  position: absolute;
+  top: 22px;
+  width: 2px;
+  height: 30px;
+  background: var(--illo-stroke);
+  opacity: 0.5;
+}
+
+.flow-split-branch:nth-child(3) {
+  left: 16.66%;
+  transform: translateX(-50%);
+}
+
+.flow-split-branch:nth-child(4) {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.flow-split-branch:nth-child(5) {
+  left: 83.33%;
+  transform: translateX(-50%);
+}
+
+.flow-caption {
+  margin: 24px 0 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-faint);
 }
 
 /* Integrations */
@@ -781,10 +871,56 @@ a {
   margin-bottom: 16px;
 }
 
+.demo-chart-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.chart-y-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-align: center;
+  padding-top: 8px;
+}
+
 .demo-chart svg {
   width: 100%;
-  height: 140px;
+  height: 160px;
   display: block;
+  color: var(--text-muted);
+}
+
+.chart-legend-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: center;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.chart-legend-title {
+  font-weight: 700;
+  color: var(--text);
+  margin-right: 4px;
+}
+
+.chart-legend-axis {
+  flex: 1 1 100%;
+  font-size: 11px;
+  color: var(--text-faint);
 }
 
 .chart-line {
@@ -930,14 +1066,53 @@ a {
   justify-content: center;
 }
 
-.segment-pills span {
+.segment-pill {
   padding: 10px 20px;
   border-radius: var(--radius-pill);
+  font-family: var(--font);
   font-size: 13px;
   font-weight: 600;
   background: var(--bg-muted);
   color: var(--text-muted);
   border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.segment-pill:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.segment-pill.is-active {
+  background: var(--bg-white);
+  color: var(--text);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px var(--shadow), 0 0 0 3px var(--accent-soft);
+  transform: translateY(-2px);
+}
+
+.segment-pill:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px var(--shadow), 0 0 0 2px var(--accent-soft);
+}
+
+.segment-pill:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.segment-pill.is-active:focus-visible {
+  box-shadow: 0 8px 24px var(--shadow), 0 0 0 3px var(--accent-soft);
+}
+
+.segments-hint {
+  margin: 16px auto 0;
+  max-width: 36rem;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-faint);
+  transition: opacity 0.2s ease;
 }
 
 /* Products */
@@ -1276,6 +1451,13 @@ a {
   line-height: 1.65;
 }
 
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
 .cta-illo {
   position: absolute;
   color: var(--illo-stroke);
@@ -1374,10 +1556,18 @@ a {
     order: -1;
   }
 
+  .flow-stage--bottom,
   .problem-grid,
-  .pipeline,
   .integration-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .flow-stage--top {
+    flex-direction: column;
+  }
+
+  .flow-split {
+    max-width: 90%;
   }
 
   .forecast-inner,
@@ -1437,7 +1627,7 @@ a {
   }
 
   .problem-grid,
-  .pipeline,
+  .flow-stage--bottom,
   .integration-grid {
     grid-template-columns: 1fr;
   }

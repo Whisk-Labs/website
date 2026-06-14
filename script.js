@@ -71,14 +71,14 @@ const PRODUCTS = {
     },
     {
       title: "Inventory Ordering",
-      body: "Order based on what you'll actually sell — not last week's gut feel. Reduce spoilage and last-minute 86s.",
+      body: "Order based on what you'll actually sell, not last week's gut feel. Reduce spoilage and last-minute 86s.",
       link: "#products",
     },
   ],
   owners: [
     {
       title: "Operations Overview",
-      body: "One view across forecasting, inventory, labor, and prep — built for owners who need margin visibility without living in spreadsheets.",
+      body: "One view across forecasting, inventory, labor, and prep, built for owners who need margin visibility without living in spreadsheets.",
       link: "#how-it-works",
     },
     {
@@ -90,7 +90,7 @@ const PRODUCTS = {
   hq: [
     {
       title: "Chain-Wide Forecasting",
-      body: "Roll up demand forecasts across every location with local variables baked in — weather, events, and seasonality per market.",
+      body: "Roll up demand forecasts across every location with local variables baked in: weather, events, and seasonality per market.",
       link: "#forecasting",
     },
     {
@@ -106,7 +106,7 @@ const PHONE_PREVIEWS = {
     ["Sat dinner staff", "12 people"],
     ["Line cooks", "4 needed"],
     ["Servers", "6 needed"],
-    ["Rush window", "7–8:30pm"],
+    ["Rush window", "7-8:30pm"],
   ],
   kitchen: [
     ["Chicken breast", "18 lbs"],
@@ -121,7 +121,7 @@ const PHONE_PREVIEWS = {
     ["Forecast accuracy", "91%"],
   ],
   hq: [
-    ["Boston — Back Bay", "+14% covers"],
+    ["Boston, Back Bay", "+14% covers"],
     ["Cambridge", "+8% covers"],
     ["Brookline", "−3% covers"],
     ["Reorder alerts", "2 locations"],
@@ -166,14 +166,22 @@ function initMobileNav() {
   });
 }
 
-function buildPath(values, width, height, padding) {
-  const step = (width - padding * 2) / (values.length - 1);
+function buildPath(values) {
+  const width = 400;
+  const height = 180;
+  const left = 40;
+  const right = 12;
+  const top = 24;
+  const bottom = 40;
+  const chartW = width - left - right;
+  const chartH = height - top - bottom;
+  const step = chartW / (values.length - 1);
   const max = Math.max(...values, 1);
 
   return values
     .map((v, i) => {
-      const x = padding + i * step;
-      const y = height - padding - (v / max) * (height - padding * 2);
+      const x = left + i * step;
+      const y = top + chartH - (v / max) * chartH;
       return `${i === 0 ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`;
     })
     .join(" ");
@@ -199,8 +207,8 @@ function updateChart() {
   if (!forecastPath || !actualPath) return;
 
   const forecast = getActiveForecast();
-  forecastPath.setAttribute("d", buildPath(forecast, 400, 160, 16));
-  actualPath.setAttribute("d", buildPath(BASE_ACTUAL, 400, 160, 16));
+  forecastPath.setAttribute("d", buildPath(forecast));
+  actualPath.setAttribute("d", buildPath(BASE_ACTUAL));
 }
 
 function initForecastToggles() {
@@ -291,9 +299,39 @@ function initPersonaTabs() {
   updatePhonePreview("managers");
 }
 
+const SEGMENT_HINTS = {
+  qsr: "High-volume throughput with prep, labor, and ordering aligned to rush windows.",
+  "fast-casual": "Daypart-driven demand with menu mix that shifts by hour and season.",
+  "full-service": "Covers, courses, and prep timed to service flow and reservation patterns.",
+  cafes: "Bakery batches and café rushes forecasted by item, not just day totals.",
+  chains: "One forecast model rolled out across locations with local signal tuning.",
+};
+
+function initSegmentPills() {
+  const hint = document.getElementById("segment-hint");
+
+  document.querySelectorAll(".segment-pill").forEach((pill) => {
+    pill.setAttribute("aria-pressed", pill.classList.contains("is-active") ? "true" : "false");
+    pill.addEventListener("click", () => {
+      document.querySelectorAll(".segment-pill").forEach((p) => {
+        p.classList.remove("is-active");
+        p.setAttribute("aria-pressed", "false");
+      });
+      pill.classList.add("is-active");
+      pill.setAttribute("aria-pressed", "true");
+
+      const key = pill.dataset.segment;
+      if (hint && key && SEGMENT_HINTS[key]) {
+        hint.textContent = SEGMENT_HINTS[key];
+      }
+    });
+  });
+}
+
 initLogos();
 initTheme();
 initYear();
 initMobileNav();
 initForecastToggles();
 initPersonaTabs();
+initSegmentPills();

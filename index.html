@@ -29,8 +29,9 @@
     <header class="site-header">
       <div class="header-inner">
         <nav class="header-nav header-nav--left" aria-label="Primary">
+          <a href="#problem">Problem</a>
           <a href="#how-it-works">How it Works</a>
-          <a href="#forecasting">Forecasting</a>
+          <a href="#integrations">Integrations</a>
           <a href="#products">Products</a>
           <a href="#about">About</a>
         </nav>
@@ -62,8 +63,9 @@
         </button>
       </div>
       <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile" hidden>
+        <a href="#problem">Problem</a>
         <a href="#how-it-works">How it Works</a>
-        <a href="#forecasting">Forecasting</a>
+        <a href="#integrations">Integrations</a>
         <a href="#products">Products</a>
         <a href="#about">About</a>
         <a href="#pilot">Join the pilot</a>
@@ -168,6 +170,79 @@
             <a href="#pilot" class="btn btn-primary">Join the pilot</a>
             <a href="#how-it-works" class="btn btn-secondary">How it Works</a>
           </div>
+          <p class="hero-proof">
+            3 founding pilot partners · Integrates with Toast, Square &amp; more
+          </p>
+        </div>
+
+        <div class="hero-dashboard" aria-hidden="true">
+          <div class="dash-card dash-card--main">
+            <div class="dash-header">
+              <span>Tomorrow's forecast</span>
+              <span class="dash-badge">Demand intelligence</span>
+            </div>
+            <div class="dash-metrics">
+              <div>
+                <span class="dash-value">—</span>
+                <span class="dash-label">Forecast accuracy</span>
+              </div>
+              <div>
+                <span class="dash-value">15–25%</span>
+                <span class="dash-label">Waste reduction target</span>
+              </div>
+              <div>
+                <span class="dash-value">8×</span>
+                <span class="dash-label">Waste ROI</span>
+              </div>
+            </div>
+            <div class="dash-chart-mini">
+              <span style="--h: 45%"></span>
+              <span style="--h: 62%"></span>
+              <span style="--h: 78%"></span>
+              <span style="--h: 92%"></span>
+              <span style="--h: 85%"></span>
+              <span style="--h: 70%"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problem -->
+      <section id="problem" class="problem-section section-deco">
+        <div class="section-wrap">
+          <span class="section-eyebrow section-eyebrow--problem">The problem</span>
+          <h2>Restaurants lose <em>$100B+ every year</em> to food waste</h2>
+          <p class="section-lead">
+            Every day, operators make three critical decisions with bad data: how much
+            to order, how much to prep, and how much labor to schedule. The result is
+            billions in recoverable waste.
+          </p>
+          <div class="problem-grid">
+            <article class="problem-card">
+              <span class="problem-stat">4–10%</span>
+              <h3>Over-ordering</h3>
+              <p>of purchased food goes straight in the bin per restaurant</p>
+            </article>
+            <article class="problem-card">
+              <span class="problem-stat">$3K/mo</span>
+              <h3>Spoilage &amp; stockouts</h3>
+              <p>lost per location on a $30K monthly food cost</p>
+            </article>
+            <article class="problem-card">
+              <span class="problem-stat">80%</span>
+              <h3>Guesswork prep</h3>
+              <p>of operators still rely on spreadsheets and gut feel</p>
+            </article>
+            <article class="problem-card">
+              <span class="problem-stat">5–10%</span>
+              <h3>Margin squeeze</h3>
+              <p>thin operating margins leave zero room for error</p>
+            </article>
+          </div>
+          <div class="problem-banner">
+            <span class="problem-banner-stat">$600K+</span>
+            <span>annual waste for a 20-location chain — money recoverable with the right intelligence.</span>
+          </div>
         </div>
       </section>
 
@@ -207,7 +282,47 @@
             <circle cx="38" cy="30" r="2" fill="currentColor"/>
           </svg>
         </div>
-        <h2>Suite of restaurant-first solutions, powered by industry-leading forecasting</h2>
+        <span class="section-eyebrow">The solution</span>
+        <h2>The intelligence layer for your restaurant ops</h2>
+        <p class="section-lead section-lead--center">
+          Whisk isn't a new POS or inventory system. It sits on top of what you
+          already use — making every operational decision smarter.
+        </p>
+
+        <div class="pipeline">
+          <article class="pipeline-step">
+            <span class="pipeline-num">01</span>
+            <h3>Connect your systems</h3>
+            <p>POS + inventory + supplier tools</p>
+          </article>
+          <article class="pipeline-step">
+            <span class="pipeline-num">02</span>
+            <h3>Forecast demand</h3>
+            <p>Sales history, weather, events, seasonality</p>
+          </article>
+          <article class="pipeline-step">
+            <span class="pipeline-num">03</span>
+            <h3>Optimize orders</h3>
+            <p>Demand × recipes vs. current stock</p>
+          </article>
+          <article class="pipeline-step">
+            <span class="pipeline-num">04</span>
+            <h3>Plan prep</h3>
+            <p>What to cook, how much, and when</p>
+          </article>
+          <article class="pipeline-step">
+            <span class="pipeline-num">05</span>
+            <h3>Schedule labor</h3>
+            <p>Staff to the forecast, not the calendar</p>
+          </article>
+          <article class="pipeline-step">
+            <span class="pipeline-num">06</span>
+            <h3>Auto-improve</h3>
+            <p>Every cycle retrains the model on your data</p>
+          </article>
+        </div>
+
+        <h2 class="suite-subhead">Powered by industry-leading forecasting</h2>
 
         <div class="suite-hub" aria-hidden="true">
           <div class="hub-center">
@@ -410,6 +525,45 @@
         </div>
       </section>
 
+      <!-- Integrations -->
+      <section id="integrations" class="integrations-section section-deco">
+        <div class="section-wrap">
+          <span class="section-eyebrow">Integrations</span>
+          <h2>Works with your existing stack</h2>
+          <p class="section-lead section-lead--center">
+            Whisk connects to the POS and inventory tools you already use. No
+            migration required — we're the intelligence layer on top.
+          </p>
+          <div class="integration-grid">
+            <article class="integration-card">
+              <h3>Toast</h3>
+              <p>#1 US restaurant POS</p>
+            </article>
+            <article class="integration-card">
+              <h3>Square</h3>
+              <p>US / AU / UK SMB market</p>
+            </article>
+            <article class="integration-card">
+              <h3>Lightspeed</h3>
+              <p>EU, Canada, APAC</p>
+            </article>
+            <article class="integration-card">
+              <h3>MarketMan</h3>
+              <p>Inventory + ordering</p>
+            </article>
+            <article class="integration-card">
+              <h3>BlueCart</h3>
+              <p>Supplier ordering</p>
+            </article>
+            <article class="integration-card">
+              <h3>Winnow</h3>
+              <p>Waste measurement</p>
+            </article>
+          </div>
+          <p class="integrations-note">Also exploring integrations with Clover, Revel, and more.</p>
+        </div>
+      </section>
+
       <!-- Variables -->
       <section class="variables-section section-deco">
         <div class="deco-layer" aria-hidden="true">
@@ -539,6 +693,7 @@
         <div class="footer-col">
           <h3>Solutions</h3>
           <a href="#how-it-works">How it Works</a>
+          <a href="#integrations">Integrations</a>
           <a href="#forecasting">Forecasting</a>
         </div>
         <div class="footer-col">
@@ -556,7 +711,7 @@
         <div class="footer-col">
           <h3>Connect</h3>
           <a href="mailto:msath@bu.edu">msath@bu.edu</a>
-          <a href="https://www.linkedin.com/in/sathvikamallavarapu" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/company/whisk-labs/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
       <div class="footer-bottom">

@@ -50,53 +50,47 @@ function initTheme() {
   setTheme(getTheme());
 }
 
+const CONTACT_URL = "https://calendly.com/msathvika24/30min";
+
 const PRODUCTS = {
   managers: [
     {
       title: "Labor Scheduling",
       body: "Staff to the forecast, not the calendar. Whisk recommends shift coverage by role based on predicted covers and rush windows.",
-      link: "#forecasting",
     },
     {
       title: "Demand Forecasting",
       body: "See hourly cover predictions and item-level demand so you can plan the day before service starts.",
-      link: "#forecasting",
     },
   ],
   kitchen: [
     {
       title: "Production Planning",
       body: "Prep the right amount at the right time. Whisk turns forecasts into daily prep lists your kitchen can act on.",
-      link: "#products",
     },
     {
       title: "Inventory Ordering",
       body: "Order based on what you'll actually sell, not last week's gut feel. Reduce spoilage and last-minute 86s.",
-      link: "#products",
     },
   ],
   owners: [
     {
       title: "Operations Overview",
       body: "One view across forecasting, inventory, labor, and prep, built for owners who need margin visibility without living in spreadsheets.",
-      link: "#how-it-works",
     },
     {
       title: "Multi-Location Insights",
       body: "Compare performance across locations and spot where waste, labor variance, or demand misses are costing you.",
-      link: "#about",
     },
   ],
   hq: [
     {
       title: "Chain-Wide Forecasting",
       body: "Roll up demand forecasts across every location with local variables baked in: weather, events, and seasonality per market.",
-      link: "#forecasting",
     },
     {
       title: "Standardized Ordering",
       body: "Give each unit ordering recommendations that respect local demand while keeping procurement consistent at HQ.",
-      link: "#products",
     },
   ],
 };
@@ -239,7 +233,7 @@ function renderAccordion(persona) {
       </button>
       <div class="accordion-panel">
         <p>${item.body}</p>
-        <a href="${item.link}" class="accordion-link">Learn more →</a>
+        <a href="${CONTACT_URL}" class="accordion-link" target="_blank" rel="noopener noreferrer">Contact us →</a>
       </div>
     </div>
   `

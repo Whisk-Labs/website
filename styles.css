@@ -1,28 +1,30 @@
 :root,
 [data-theme="light"] {
-  --bg: #faf7f2;
+  --bg: #f7f9f5;
   --bg-white: #ffffff;
-  --bg-muted: #f3ede4;
-  --bg-card: #f8f4ee;
+  --bg-muted: #eef2ea;
+  --bg-card: #f3f6ef;
   --header-bg: rgba(255, 255, 255, 0.92);
-  --border: rgba(28, 24, 20, 0.08);
-  --border-strong: rgba(28, 24, 20, 0.14);
-  --text: #1c1814;
-  --text-muted: rgba(28, 24, 20, 0.62);
-  --text-faint: rgba(28, 24, 20, 0.42);
-  --accent: #c4703a;
-  --accent-hover: #a85a2a;
-  --accent-soft: rgba(196, 112, 58, 0.1);
-  --accent-illo: rgba(196, 112, 58, 0.35);
-  --chart-actual: rgba(28, 24, 20, 0.25);
-  --chart-forecast: #c4703a;
-  --btn-secondary-bg: #f3ede4;
-  --btn-secondary-hover: #ebe3d8;
-  --phone-frame: #2a2420;
-  --shadow: rgba(28, 24, 20, 0.06);
-  --illo-stroke: #6b8f5a;
-  --illo-opacity: 0.55;
-  --illo-dot: rgba(107, 143, 90, 0.18);
+  --border: rgba(46, 56, 38, 0.08);
+  --border-strong: rgba(46, 56, 38, 0.14);
+  --text: #1e2419;
+  --text-muted: rgba(30, 36, 25, 0.62);
+  --text-faint: rgba(30, 36, 25, 0.42);
+  --accent: #6d8260;
+  --accent-hover: #5a6d4f;
+  --accent-soft: rgba(109, 130, 96, 0.12);
+  --accent-illo: rgba(109, 130, 96, 0.32);
+  --accent-border: rgba(109, 130, 96, 0.35);
+  --chart-actual: rgba(30, 36, 25, 0.22);
+  --chart-forecast: #7d916b;
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #eef2ea;
+  --btn-secondary-hover: #e4e9df;
+  --phone-frame: #2a3224;
+  --shadow: rgba(30, 36, 25, 0.06);
+  --illo-stroke: #8fa67e;
+  --illo-opacity: 0.48;
+  --illo-dot: rgba(125, 145, 107, 0.14);
   --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --max: 1080px;
   --radius: 20px;
@@ -31,29 +33,31 @@
 }
 
 [data-theme="dark"] {
-  --bg: #12100e;
-  --bg-white: #1a1714;
-  --bg-muted: #221e1a;
-  --bg-card: #1f1b17;
-  --header-bg: rgba(18, 16, 14, 0.94);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
-  --text: #f5f0e8;
-  --text-muted: rgba(245, 240, 232, 0.68);
-  --text-faint: rgba(245, 240, 232, 0.42);
-  --accent: #d4844a;
-  --accent-hover: #e09558;
-  --accent-soft: rgba(212, 132, 74, 0.14);
-  --accent-illo: rgba(212, 132, 74, 0.4);
-  --chart-actual: rgba(245, 240, 232, 0.28);
-  --chart-forecast: #d4844a;
-  --btn-secondary-bg: #2a2420;
-  --btn-secondary-hover: #352e28;
-  --phone-frame: #0f0d0b;
-  --shadow: rgba(0, 0, 0, 0.35);
-  --illo-stroke: #9cb07d;
-  --illo-opacity: 0.45;
-  --illo-dot: rgba(156, 176, 125, 0.12);
+  --bg: #0a0c09;
+  --bg-white: #121410;
+  --bg-muted: #181b15;
+  --bg-card: #161912;
+  --header-bg: rgba(10, 12, 9, 0.94);
+  --border: rgba(167, 184, 150, 0.1);
+  --border-strong: rgba(167, 184, 150, 0.16);
+  --text: #e8ede3;
+  --text-muted: rgba(232, 237, 227, 0.68);
+  --text-faint: rgba(232, 237, 227, 0.42);
+  --accent: #a7b896;
+  --accent-hover: #b8c9a8;
+  --accent-soft: rgba(167, 184, 150, 0.14);
+  --accent-illo: rgba(167, 184, 150, 0.38);
+  --accent-border: rgba(167, 184, 150, 0.35);
+  --chart-actual: rgba(232, 237, 227, 0.26);
+  --chart-forecast: #a7b896;
+  --btn-primary-text: #1a1f15;
+  --btn-secondary-bg: #1e2219;
+  --btn-secondary-hover: #262b21;
+  --phone-frame: #080907;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --illo-stroke: #8fa67e;
+  --illo-opacity: 0.42;
+  --illo-dot: rgba(167, 184, 150, 0.1);
 }
 
 *,
@@ -73,7 +77,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--text);
-  background: var(--bg-white);
+  background: var(--bg);
   -webkit-font-smoothing: antialiased;
   transition: background 0.25s ease, color 0.25s ease;
 }
@@ -256,7 +260,7 @@ a {
 
 .btn-primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--btn-primary-text);
 }
 
 .btn-primary:hover {
@@ -408,7 +412,7 @@ a {
   flex: 1;
   height: var(--h);
   border-radius: 4px 4px 2px 2px;
-  background: linear-gradient(180deg, var(--accent) 0%, rgba(196, 112, 58, 0.35) 100%);
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-illo) 100%);
 }
 
 .section-wrap {
@@ -557,7 +561,7 @@ textarea {
 }
 
 .flow-node--core {
-  border-color: rgba(196, 112, 58, 0.45);
+  border-color: var(--accent-border);
   background: var(--accent-soft);
   min-width: 180px;
 }
@@ -999,7 +1003,7 @@ textarea {
 
 .var-btn.is-active {
   background: var(--accent-soft);
-  border-color: rgba(196, 112, 58, 0.3);
+  border-color: var(--accent-border);
   color: var(--accent);
 }
 

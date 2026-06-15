@@ -28,19 +28,22 @@
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <nav class="header-nav header-nav--left" aria-label="Primary">
+        <nav class="header-nav header-nav--left" aria-label="Primary left">
           <a href="#problem">Problem</a>
           <a href="#how-it-works">How it Works</a>
           <a href="#products">Products</a>
-          <a href="#integrations">Integrations</a>
-          <a href="#about">About</a>
         </nav>
 
         <a href="#" class="logo" aria-label="Whisk Labs home">
           <img id="site-logo" src="assets/logo.png" alt="Whisk Labs" class="logo-img" />
         </a>
 
-        <div class="header-actions">
+        <div class="header-end">
+          <nav class="header-nav header-nav--right" aria-label="Primary right">
+            <a href="#integrations">Integrations</a>
+            <a href="#about">About</a>
+          </nav>
+          <div class="header-actions">
           <button
             type="button"
             class="theme-toggle"
@@ -56,6 +59,7 @@
             </svg>
           </button>
           <a href="https://calendly.com/msathvika24/30min" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Join the pilot</a>
+          </div>
         </div>
 
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">

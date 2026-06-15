@@ -322,6 +322,63 @@ function initSegmentPills() {
   });
 }
 
+function initPilotForm() {
+  const form = document.getElementById("pilot-form");
+  const success = document.getElementById("pilot-form-success");
+  if (!form) return;
+
+  const nextInput = form.querySelector('[name="_next"]');
+  if (nextInput) {
+    const base = siteBase();
+    const path = base === "/" ? "" : base.replace(/\/$/, "");
+    nextInput.value = `${location.origin}${path}/#pilot?submitted=1`;
+  }
+
+  const showSuccess = () => {
+    form.hidden = true;
+    const divider = form.previousElementSibling;
+    if (divider?.classList.contains("cta-divider")) divider.hidden = true;
+    if (success) success.hidden = false;
+  };
+
+  if (new URLSearchParams(location.search).get("submitted") === "1") {
+    showSuccess();
+    history.replaceState(null, "", `${location.pathname}${location.hash}`);
+  }
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const submitBtn = form.querySelector(".pilot-form-submit");
+    const defaultLabel = submitBtn?.textContent || "Send application";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("submit failed");
+
+      form.reset();
+      showSuccess();
+    } catch {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = defaultLabel;
+      }
+      window.alert(
+        "Something went wrong. Please try again or book a call on Calendly."
+      );
+    }
+  });
+}
+
 initLogos();
 initTheme();
 initYear();
@@ -329,3 +386,4 @@ initMobileNav();
 initForecastToggles();
 initPersonaTabs();
 initSegmentPills();
+initPilotForm();

@@ -1481,7 +1481,7 @@ textarea {
 
 .cta-card {
   position: relative;
-  max-width: 800px;
+  max-width: 640px;
   margin: 0 auto;
   padding: 64px 48px;
   text-align: center;
@@ -1509,6 +1509,117 @@ textarea {
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
+  margin-bottom: 8px;
+}
+
+.cta-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 28px 0 24px;
+  color: var(--text-faint);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cta-divider::before,
+.cta-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.pilot-form {
+  text-align: left;
+}
+
+.pilot-form-honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pilot-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.pilot-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pilot-field--full {
+  grid-column: 1 / -1;
+}
+
+.pilot-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.pilot-optional {
+  font-weight: 500;
+  color: var(--text-faint);
+}
+
+.pilot-field input,
+.pilot-field select,
+.pilot-field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-white);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pilot-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.pilot-field input:focus,
+.pilot-field select:focus,
+.pilot-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.pilot-form-submit {
+  width: 100%;
+}
+
+.pilot-form-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.pilot-form-success {
+  margin-top: 8px;
+  padding: 24px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-white);
+  border: 1px solid var(--accent-border);
+  text-align: center;
+}
+
+.pilot-form-success p {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
 .cta-illo {
@@ -1724,12 +1835,16 @@ textarea {
     white-space: nowrap;
   }
 
-  .footer-grid {
+  .pilot-form-grid {
     grid-template-columns: 1fr;
   }
 
   .cta-card {
     padding: 48px 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 
   .cta-illo {

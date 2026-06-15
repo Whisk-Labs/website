@@ -682,12 +682,92 @@
           </div>
           <h2>Join our founding pilot</h2>
           <p>
-            Every restaurant runs differently. Book a 30-minute call to share your
-            locations and pain points, and we'll shape a pilot that fits your operation.
+            Every restaurant runs differently. Book a quick call or tell us about
+            your operation below, and we'll shape a pilot that fits.
           </p>
           <div class="cta-actions">
             <a href="https://calendly.com/msathvika24/30min" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Book a 30-min call</a>
-            <a href="mailto:msath@bu.edu?subject=Whisk%20Labs%20Pilot%20Inquiry" class="btn btn-secondary btn-lg">Email us</a>
+          </div>
+
+          <div class="cta-divider" aria-hidden="true">
+            <span>or apply below</span>
+          </div>
+
+          <form
+            id="pilot-form"
+            class="pilot-form"
+            action="https://formsubmit.co/msath@bu.edu"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Whisk Labs Pilot Inquiry" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="" />
+            <input
+              type="text"
+              name="_gotcha"
+              class="pilot-form-honeypot"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+
+            <div class="pilot-form-grid">
+              <label class="pilot-field">
+                <span class="pilot-label">Restaurant name</span>
+                <input type="text" name="restaurant_name" required autocomplete="organization" />
+              </label>
+              <label class="pilot-field">
+                <span class="pilot-label">Your name</span>
+                <input type="text" name="contact_name" required autocomplete="name" />
+              </label>
+              <label class="pilot-field">
+                <span class="pilot-label">Email</span>
+                <input type="email" name="email" required autocomplete="email" />
+              </label>
+              <label class="pilot-field">
+                <span class="pilot-label">Phone <span class="pilot-optional">(optional)</span></span>
+                <input type="tel" name="phone" autocomplete="tel" />
+              </label>
+              <label class="pilot-field">
+                <span class="pilot-label">Number of locations</span>
+                <select name="locations" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option value="1">1 location</option>
+                  <option value="2-5">2-5 locations</option>
+                  <option value="6-20">6-20 locations</option>
+                  <option value="20+">20+ locations</option>
+                </select>
+              </label>
+              <label class="pilot-field">
+                <span class="pilot-label">Biggest ops challenge</span>
+                <select name="pain_point" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option value="Forecasting">Demand forecasting</option>
+                  <option value="Inventory">Inventory ordering</option>
+                  <option value="Labor">Labor scheduling</option>
+                  <option value="Prep">Prep quantities</option>
+                  <option value="Waste">Food waste</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+              <label class="pilot-field pilot-field--full">
+                <span class="pilot-label">Tell us more</span>
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="What does a typical week look like? What tools do you use today?"
+                  required
+                ></textarea>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-secondary btn-lg pilot-form-submit">Send application</button>
+          </form>
+
+          <div id="pilot-form-success" class="pilot-form-success" hidden>
+            <p>Thanks for applying. We'll review your note and get back to you within 1-2 business days.</p>
+            <a href="https://calendly.com/msathvika24/30min" class="text-link" target="_blank" rel="noopener noreferrer">Want to talk sooner? Book a call →</a>
           </div>
         </div>
       </section>

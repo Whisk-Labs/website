@@ -322,6 +322,98 @@ function initSegmentPills() {
   });
 }
 
+function formatCurrency(value) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+
+function getPricingTier(locations) {
+  if (locations < 5) {
+    return { name: "Starter", price: 80 };
+  }
+  if (locations < 50) {
+    return { name: "Growth", price: 140 };
+  }
+  return { name: "Pro", price: 200 };
+}
+
+function initRoiCalculator() {
+  const range = document.getElementById("roi-locations-range");
+  const input = document.getElementById("roi-locations");
+  const revenue = document.getElementById("roi-revenue");
+  if (!range || !input || !revenue) return;
+
+  const wasteEl = document.getElementById("roi-waste");
+  const savedEl = document.getElementById("roi-saved");
+  const savingsEl = document.getElementById("roi-savings");
+  const subscriptionEl = document.getElementById("roi-subscription");
+  const subscriptionDetailEl = document.getElementById("roi-subscription-detail");
+  const netEl = document.getElementById("roi-net");
+  const multipleEl = document.getElementById("roi-multiple");
+  const tierNoteEl = document.getElementById("roi-tier-note");
+  const locationsValueEl = document.getElementById("roi-locations-value");
+
+  const clampLocations = (value) => Math.min(500, Math.max(1, Number(value) || 1));
+
+  const update = () => {
+    const locations = clampLocations(input.value);
+    const revenuePerLocation = Number(revenue.value);
+    const tier = getPricingTier(locations);
+
+    if (locationsValueEl) {
+      locationsValueEl.textContent = `${locations} location${locations === 1 ? "" : "s"}`;
+    }
+
+    const monthlyWaste = locations * revenuePerLocation * 0.06;
+    const wasteSaved = monthlyWaste * 0.2;
+    const subscription = locations * tier.price;
+    const netRoi = wasteSaved - subscription;
+    const roiMultiple = subscription > 0 ? wasteSaved / subscription : 0;
+
+    if (tierNoteEl) {
+      tierNoteEl.textContent = `${tier.name} plan · $${tier.price}/location/month`;
+    }
+    if (wasteEl) wasteEl.textContent = formatCurrency(monthlyWaste);
+    if (savedEl) savedEl.textContent = formatCurrency(wasteSaved);
+    if (savingsEl) savingsEl.textContent = formatCurrency(wasteSaved);
+    if (subscriptionEl) subscriptionEl.textContent = formatCurrency(subscription);
+    if (subscriptionDetailEl) {
+      subscriptionDetailEl.textContent = `${locations} × $${tier.price}/loc (${tier.name})`;
+    }
+    if (netEl) {
+      netEl.textContent = formatCurrency(netRoi);
+      netEl.style.color = netRoi >= 0 ? "var(--accent)" : "var(--text)";
+    }
+    if (multipleEl) {
+      multipleEl.textContent = `${roiMultiple.toFixed(1)}× return`;
+    }
+  };
+
+  range.addEventListener("input", () => {
+    input.value = range.value;
+    update();
+  });
+
+  input.addEventListener("input", () => {
+    range.value = String(clampLocations(input.value));
+    update();
+  });
+
+  input.addEventListener("change", () => {
+    const locations = clampLocations(input.value);
+    input.value = String(locations);
+    range.value = String(locations);
+    update();
+  });
+
+  revenue.addEventListener("change", update);
+
+  update();
+}
+
 function initPilotForm() {
   const form = document.getElementById("pilot-form");
   const success = document.getElementById("pilot-form-success");
@@ -386,4 +478,5 @@ initMobileNav();
 initForecastToggles();
 initPersonaTabs();
 initSegmentPills();
+initRoiCalculator();
 initPilotForm();

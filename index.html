@@ -14,8 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=5" />
-    <link rel="stylesheet" href="illustrations.css?v=5" />
+    <link rel="stylesheet" href="styles.css?v=6" />
+    <link rel="stylesheet" href="illustrations.css?v=6" />
     <script>
       (function () {
         const stored = localStorage.getItem("whisk-theme");
@@ -605,6 +605,93 @@
         </div>
       </section>
 
+      <!-- ROI calculator -->
+      <section id="roi" class="roi-section section-deco">
+        <div class="roi-inner">
+          <div class="roi-header">
+            <span class="section-eyebrow">ROI calculator</span>
+            <h2>Estimate your return with Whisk</h2>
+            <p class="section-lead">
+              Model monthly waste savings against subscription cost using industry-average assumptions.
+            </p>
+          </div>
+
+          <div class="roi-calculator" id="roi-calculator">
+            <div class="roi-panel roi-panel--inputs">
+              <label class="roi-field" for="roi-locations">
+                <span class="roi-label">Number of locations</span>
+                <div class="roi-locations-control">
+                  <input
+                    type="range"
+                    id="roi-locations-range"
+                    min="1"
+                    max="500"
+                    value="3"
+                    aria-describedby="roi-locations-value"
+                  />
+                  <input
+                    type="number"
+                    id="roi-locations"
+                    min="1"
+                    max="500"
+                    value="3"
+                    inputmode="numeric"
+                  />
+                </div>
+                <span class="roi-field-hint" id="roi-locations-value">3 locations</span>
+              </label>
+
+              <label class="roi-field" for="roi-revenue">
+                <span class="roi-label">Average monthly revenue per location</span>
+                <select id="roi-revenue">
+                  <option value="50000">$50K</option>
+                  <option value="100000" selected>$100K</option>
+                  <option value="150000">$150K</option>
+                  <option value="200000">$200K+</option>
+                </select>
+              </label>
+
+              <p class="roi-tier-note" id="roi-tier-note">Starter plan · $80/location/month</p>
+            </div>
+
+            <div class="roi-panel roi-panel--outputs" aria-live="polite" aria-atomic="true">
+              <div class="roi-output">
+                <span class="roi-output-label">Estimated monthly food waste</span>
+                <span class="roi-output-value" id="roi-waste">$0</span>
+                <span class="roi-output-sub">6% of revenue (industry avg.)</span>
+              </div>
+              <div class="roi-output">
+                <span class="roi-output-label">Waste saved with Whisk</span>
+                <span class="roi-output-value" id="roi-saved">$0</span>
+                <span class="roi-output-sub">20% reduction target</span>
+              </div>
+              <div class="roi-output">
+                <span class="roi-output-label">Monthly savings</span>
+                <span class="roi-output-value" id="roi-savings">$0</span>
+              </div>
+              <div class="roi-output">
+                <span class="roi-output-label">Whisk subscription</span>
+                <span class="roi-output-value" id="roi-subscription">$0</span>
+                <span class="roi-output-sub" id="roi-subscription-detail">—</span>
+              </div>
+              <div class="roi-output">
+                <span class="roi-output-label">Net ROI per month</span>
+                <span class="roi-output-value" id="roi-net">$0</span>
+              </div>
+              <div class="roi-output roi-output--highlight">
+                <span class="roi-output-label">ROI multiple</span>
+                <span class="roi-output-value roi-output-value--hero" id="roi-multiple">0×</span>
+                <span class="roi-output-sub">Savings vs. subscription</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="roi-disclaimer">
+            Estimates use industry benchmarks for illustration only. Actual results vary by concept, seasonality, and execution.
+          </p>
+        </div>
+      </section>
+
       <!-- Products -->
       <section id="products" class="products-section section-deco">
         <div class="deco-layer" aria-hidden="true">
@@ -961,6 +1048,7 @@
           <a href="#decision-loop">Decision Loop</a>
           <a href="#integrations">Integrations</a>
           <a href="#forecasting">Forecasting</a>
+          <a href="#roi">ROI calculator</a>
           <a href="#pricing">Pricing</a>
         </div>
         <div class="footer-col">
@@ -987,6 +1075,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
   </body>
 </html>

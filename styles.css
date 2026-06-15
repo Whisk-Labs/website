@@ -97,6 +97,7 @@ a {
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   transition: background 0.25s ease, border-color 0.25s ease;
+  overflow: hidden;
 }
 
 .header-inner {
@@ -104,21 +105,22 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 14px 24px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
+  gap: 12px 20px;
   min-height: 68px;
 }
 
-.header-nav--left,
-.header-end {
-  flex: 1 1 0;
+.header-start {
+  grid-column: 1;
+  justify-self: start;
   min-width: 0;
 }
 
-.header-nav--left {
+.header-nav--left,
+.header-nav--right {
   display: flex;
-  flex-wrap: wrap;
   gap: 24px;
   font-size: 14px;
   font-weight: 500;
@@ -126,9 +128,12 @@ a {
 }
 
 .header-end {
+  grid-column: 3;
+  justify-self: end;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  gap: 24px;
+  min-width: 0;
 }
 
 .header-nav a:hover {
@@ -136,13 +141,11 @@ a {
 }
 
 .logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  grid-column: 2;
+  grid-row: 1;
   display: inline-flex;
   align-items: center;
-  z-index: 1;
+  justify-self: center;
 }
 
 .logo-img {
@@ -1758,9 +1761,14 @@ textarea {
 }
 
 @media (max-width: 1040px) {
-  .header-nav--left {
+  .header-nav--left,
+  .header-nav--right {
     gap: 14px;
     font-size: 13px;
+  }
+
+  .header-end {
+    gap: 14px;
   }
 
   .logo-img {
@@ -1771,26 +1779,25 @@ textarea {
 
 @media (max-width: 860px) {
   .header-inner {
-    display: grid;
     grid-template-columns: 1fr auto;
     min-height: auto;
   }
 
-  .header-nav--left,
+  .header-start,
   .header-end {
     display: none;
   }
 
   .logo {
-    position: static;
-    transform: none;
-    justify-self: start;
     grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
   }
 
   .menu-toggle {
     display: flex;
     grid-column: 2;
+    grid-row: 1;
   }
 }
 

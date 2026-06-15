@@ -605,93 +605,6 @@
         </div>
       </section>
 
-      <!-- ROI calculator -->
-      <section id="roi" class="roi-section section-deco">
-        <div class="roi-inner">
-          <div class="roi-header">
-            <span class="section-eyebrow">ROI calculator</span>
-            <h2>Estimate your return with Whisk</h2>
-            <p class="section-lead">
-              Model monthly waste savings against subscription cost using industry-average assumptions.
-            </p>
-          </div>
-
-          <div class="roi-calculator" id="roi-calculator">
-            <div class="roi-panel roi-panel--inputs">
-              <label class="roi-field" for="roi-locations">
-                <span class="roi-label">Number of locations</span>
-                <div class="roi-locations-control">
-                  <input
-                    type="range"
-                    id="roi-locations-range"
-                    min="1"
-                    max="500"
-                    value="3"
-                    aria-describedby="roi-locations-value"
-                  />
-                  <input
-                    type="number"
-                    id="roi-locations"
-                    min="1"
-                    max="500"
-                    value="3"
-                    inputmode="numeric"
-                  />
-                </div>
-                <span class="roi-field-hint" id="roi-locations-value">3 locations</span>
-              </label>
-
-              <label class="roi-field" for="roi-revenue">
-                <span class="roi-label">Average monthly revenue per location</span>
-                <select id="roi-revenue">
-                  <option value="50000">$50K</option>
-                  <option value="100000" selected>$100K</option>
-                  <option value="150000">$150K</option>
-                  <option value="200000">$200K+</option>
-                </select>
-              </label>
-
-              <p class="roi-tier-note" id="roi-tier-note">Starter plan · $80/location/month</p>
-            </div>
-
-            <div class="roi-panel roi-panel--outputs" aria-live="polite" aria-atomic="true">
-              <div class="roi-output">
-                <span class="roi-output-label">Estimated monthly food waste</span>
-                <span class="roi-output-value" id="roi-waste">$0</span>
-                <span class="roi-output-sub">6% of revenue (industry avg.)</span>
-              </div>
-              <div class="roi-output">
-                <span class="roi-output-label">Waste saved with Whisk</span>
-                <span class="roi-output-value" id="roi-saved">$0</span>
-                <span class="roi-output-sub">20% reduction target</span>
-              </div>
-              <div class="roi-output">
-                <span class="roi-output-label">Monthly savings</span>
-                <span class="roi-output-value" id="roi-savings">$0</span>
-              </div>
-              <div class="roi-output">
-                <span class="roi-output-label">Whisk subscription</span>
-                <span class="roi-output-value" id="roi-subscription">$0</span>
-                <span class="roi-output-sub" id="roi-subscription-detail">—</span>
-              </div>
-              <div class="roi-output">
-                <span class="roi-output-label">Net ROI per month</span>
-                <span class="roi-output-value" id="roi-net">$0</span>
-              </div>
-              <div class="roi-output roi-output--highlight">
-                <span class="roi-output-label">ROI multiple</span>
-                <span class="roi-output-value roi-output-value--hero" id="roi-multiple">0×</span>
-                <span class="roi-output-sub">Savings vs. subscription</span>
-              </div>
-            </div>
-          </div>
-
-          <p class="roi-disclaimer">
-            Estimates use industry benchmarks for illustration only. Actual results vary by concept, seasonality, and execution.
-          </p>
-        </div>
-      </section>
-
       <!-- Products -->
       <section id="products" class="products-section section-deco">
         <div class="deco-layer" aria-hidden="true">
@@ -821,53 +734,6 @@
         </div>
       </section>
 
-      <!-- About -->
-      <section id="about" class="about-section section-deco">
-        <div class="deco-layer" aria-hidden="true">
-          <div class="illo illo--float about-deco--left">
-            <svg viewBox="0 0 150 140" fill="none">
-              <path d="M30 100h90" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              <rect x="45" y="55" width="60" height="45" rx="3" stroke="currentColor" stroke-width="1.2"/>
-              <path d="M55 70h40M55 82h28" stroke="currentColor" stroke-width="1"/>
-              <circle cx="105" cy="40" r="10" stroke="currentColor" stroke-width="1.1"/>
-            </svg>
-          </div>
-          <div class="illo illo--float-slow about-deco--right">
-            <svg viewBox="0 0 140 130" fill="none">
-              <path d="M25 95c20-50 70-50 90 0" stroke="currentColor" stroke-width="1.2"/>
-              <path d="M45 55l25 15 25-15" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
-              <circle cx="70" cy="42" r="8" stroke="currentColor" stroke-width="1.1"/>
-            </svg>
-          </div>
-        </div>
-        <div class="about-inner">
-          <div class="about-copy">
-            <span class="section-eyebrow">About Whisk Labs</span>
-            <h2>Built with operators, backed by Innovate@BU</h2>
-            <p>
-              Whisk Labs is a Boston-based startup building decision intelligence
-              for restaurants, from single locations to growing chains. We're
-              piloting with founding partners across the Boston area, funded by
-              Innovate@BU and backed by an engineering team from UMass Amherst.
-            </p>
-          </div>
-          <div class="about-cards">
-            <div class="about-card">
-              <span class="about-num">3</span>
-              <span>Founding pilot partners</span>
-            </div>
-            <div class="about-card">
-              <span class="about-num">4</span>
-              <span>Core product modules</span>
-            </div>
-            <div class="about-card">
-              <span class="about-num">24/7</span>
-              <span>Operational visibility</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Pricing -->
       <section id="pricing" class="pricing-section section-deco">
         <div class="pricing-inner">
@@ -918,6 +784,140 @@
             </article>
 
             <p class="pricing-note">Enterprise pricing available for 500+ locations. Custom integrations &amp; SLAs.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROI calculator -->
+      <section id="roi" class="roi-section section-deco">
+        <div class="roi-inner">
+          <div class="roi-header">
+            <span class="section-eyebrow">ROI calculator</span>
+            <h2>Estimate your return with Whisk</h2>
+            <p class="section-lead">
+              Model monthly waste savings against subscription cost using industry-average assumptions.
+            </p>
+          </div>
+
+          <div class="roi-calculator" id="roi-calculator">
+            <div class="roi-panel roi-panel--inputs">
+              <label class="roi-field" for="roi-locations">
+                <span class="roi-label">Number of locations</span>
+                <div class="roi-locations-control">
+                  <input
+                    type="range"
+                    id="roi-locations-range"
+                    min="1"
+                    max="500"
+                    value="3"
+                    aria-describedby="roi-locations-value"
+                  />
+                  <input
+                    type="number"
+                    id="roi-locations"
+                    min="1"
+                    max="500"
+                    value="3"
+                    inputmode="numeric"
+                  />
+                </div>
+                <span class="roi-field-hint" id="roi-locations-value">3 locations</span>
+              </label>
+
+              <label class="roi-field" for="roi-revenue">
+                <span class="roi-label">Average monthly revenue per location</span>
+                <select id="roi-revenue">
+                  <option value="50000">$50K</option>
+                  <option value="100000" selected>$100K</option>
+                  <option value="150000">$150K</option>
+                  <option value="200000">$200K+</option>
+                </select>
+              </label>
+
+              <p class="roi-tier-note" id="roi-tier-note">Starter plan · $80/location/month</p>
+            </div>
+
+            <div class="roi-panel roi-panel--outputs" aria-live="polite" aria-atomic="true">
+              <div class="roi-output">
+                <span class="roi-output-label">Estimated monthly food waste</span>
+                <span class="roi-output-value" id="roi-waste">$0</span>
+                <span class="roi-output-sub">6% of revenue (industry avg.)</span>
+              </div>
+              <div class="roi-output">
+                <span class="roi-output-label">Waste saved with Whisk</span>
+                <span class="roi-output-value" id="roi-saved">$0</span>
+                <span class="roi-output-sub">20% reduction target</span>
+              </div>
+              <div class="roi-output">
+                <span class="roi-output-label">Monthly savings</span>
+                <span class="roi-output-value" id="roi-savings">$0</span>
+              </div>
+              <div class="roi-output">
+                <span class="roi-output-label">Whisk subscription</span>
+                <span class="roi-output-value" id="roi-subscription">$0</span>
+                <span class="roi-output-sub" id="roi-subscription-detail">—</span>
+              </div>
+              <div class="roi-output">
+                <span class="roi-output-label">Net ROI per month</span>
+                <span class="roi-output-value" id="roi-net">$0</span>
+              </div>
+              <div class="roi-output roi-output--highlight">
+                <span class="roi-output-label">ROI multiple</span>
+                <span class="roi-output-value roi-output-value--hero" id="roi-multiple">0×</span>
+                <span class="roi-output-sub">Savings vs. subscription</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="roi-disclaimer">
+            Estimates use industry benchmarks for illustration only. Actual results vary by concept, seasonality, and execution.
+          </p>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about-section section-deco">
+        <div class="deco-layer" aria-hidden="true">
+          <div class="illo illo--float about-deco--left">
+            <svg viewBox="0 0 150 140" fill="none">
+              <path d="M30 100h90" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <rect x="45" y="55" width="60" height="45" rx="3" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M55 70h40M55 82h28" stroke="currentColor" stroke-width="1"/>
+              <circle cx="105" cy="40" r="10" stroke="currentColor" stroke-width="1.1"/>
+            </svg>
+          </div>
+          <div class="illo illo--float-slow about-deco--right">
+            <svg viewBox="0 0 140 130" fill="none">
+              <path d="M25 95c20-50 70-50 90 0" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M45 55l25 15 25-15" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+              <circle cx="70" cy="42" r="8" stroke="currentColor" stroke-width="1.1"/>
+            </svg>
+          </div>
+        </div>
+        <div class="about-inner">
+          <div class="about-copy">
+            <span class="section-eyebrow">About Whisk Labs</span>
+            <h2>Built with operators, backed by Innovate@BU</h2>
+            <p>
+              Whisk Labs is a Boston-based startup building decision intelligence
+              for restaurants, from single locations to growing chains. We're
+              piloting with founding partners across the Boston area, funded by
+              Innovate@BU and backed by an engineering team from UMass Amherst.
+            </p>
+          </div>
+          <div class="about-cards">
+            <div class="about-card">
+              <span class="about-num">3</span>
+              <span>Founding pilot partners</span>
+            </div>
+            <div class="about-card">
+              <span class="about-num">4</span>
+              <span>Core product modules</span>
+            </div>
+            <div class="about-card">
+              <span class="about-num">24/7</span>
+              <span>Operational visibility</span>
+            </div>
           </div>
         </div>
       </section>
@@ -1048,8 +1048,8 @@
           <a href="#decision-loop">Decision Loop</a>
           <a href="#integrations">Integrations</a>
           <a href="#forecasting">Forecasting</a>
-          <a href="#roi">ROI calculator</a>
           <a href="#pricing">Pricing</a>
+          <a href="#roi">ROI calculator</a>
         </div>
         <div class="footer-col">
           <h3>Products</h3>

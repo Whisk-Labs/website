@@ -334,15 +334,7 @@ a {
 }
 
 .hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 48px;
-  z-index: 3;
-  pointer-events: none;
-  background: linear-gradient(to bottom, transparent, var(--bg));
+  display: none;
 }
 
 .hero-inner {
@@ -394,8 +386,8 @@ a {
   white-space: nowrap;
 }
 
-.hero-br {
-  display: none;
+.hero-title-line {
+  display: block;
 }
 
 .hero-sub {
@@ -414,11 +406,10 @@ a {
 }
 
 .hero-dashboard-shell {
-  border-radius: 20px 20px 0 0;
+  border-radius: 20px;
   border: 1px solid var(--border);
-  border-bottom: none;
   background: var(--bg-white);
-  box-shadow: 0 -8px 80px var(--shadow);
+  box-shadow: 0 20px 60px var(--shadow);
   overflow: hidden;
 }
 
@@ -533,7 +524,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 0;
 }
 
 .dash-stat-card {
@@ -756,14 +747,15 @@ a {
     height: calc(100svh - 69px);
     min-height: calc(100svh - 69px);
     max-height: calc(100svh - 69px);
-    padding: 18px 24px 0;
+    padding: 16px 24px 20px;
     box-sizing: border-box;
+    align-items: center;
   }
 
   .hero-inner {
     height: 100%;
-    gap: 10px;
-    justify-content: flex-start;
+    gap: 14px;
+    justify-content: center;
     min-height: 0;
   }
 
@@ -771,15 +763,11 @@ a {
     flex-shrink: 0;
   }
 
-  .hero-br {
-    display: inline;
-  }
-
   .hero h1 {
     margin: 0 auto 10px;
     max-width: 900px;
-    font-size: clamp(1.85rem, 2.8vw, 2.55rem);
-    line-height: 1.12;
+    font-size: clamp(1.85rem, 2.8vw, 2.5rem);
+    line-height: 1.14;
   }
 
   .hero-sub {
@@ -793,20 +781,15 @@ a {
   }
 
   .hero-dashboard {
-    flex: 1;
-    min-height: 0;
+    flex-shrink: 0;
     width: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
+    max-width: 920px;
   }
 
   .hero-dashboard-shell {
     width: 100%;
-    max-height: 100%;
-    transform: scale(0.94);
-    transform-origin: bottom center;
+    transform: none;
+    max-height: none;
   }
 
   .dash-app-main,
@@ -815,21 +798,13 @@ a {
     padding-bottom: 14px;
   }
 
-  .dash-stat-row {
-    margin-bottom: 10px;
-  }
-
   .dash-greet {
     margin-bottom: 10px;
   }
 
-  .dash-chart-mini {
-    height: 44px;
-  }
-
   .hero-logos {
     flex-shrink: 0;
-    padding: 4px 0 10px;
+    padding: 2px 0 0;
     font-size: 12px;
     gap: 16px 24px;
   }
@@ -2653,10 +2628,6 @@ textarea {
   .hero-dashboard-shell {
     border-radius: 16px;
     border-bottom: 1px solid var(--border);
-  }
-
-  .hero::after {
-    display: none;
   }
 
   .flow-stage--bottom,

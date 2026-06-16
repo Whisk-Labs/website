@@ -445,14 +445,18 @@ a {
 }
 
 .dash-store-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
   width: 34px;
   height: 34px;
   border-radius: 10px;
   background: var(--accent-soft);
   color: var(--accent);
+}
+
+.dash-store-icon svg {
+  display: block;
 }
 
 .dash-store strong,
@@ -463,8 +467,8 @@ a {
   color: var(--text);
 }
 
-.dash-store span,
-.dash-user span {
+.dash-store > div span,
+.dash-user > div span {
   display: block;
   font-size: 10px;
   color: var(--text-faint);
@@ -487,9 +491,8 @@ a {
 }
 
 .dash-avatar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   flex-shrink: 0;
   width: 32px;
   height: 32px;
@@ -500,8 +503,6 @@ a {
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.03em;
-  text-align: center;
-  overflow: hidden;
 }
 
 .dash-app-body {

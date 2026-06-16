@@ -338,10 +338,14 @@ a {
 
 @media (min-width: 961px) {
   .hero {
+    height: calc(100svh - 69px);
     min-height: calc(100svh - 69px);
-    padding: 56px 24px 72px;
+    max-height: calc(100svh - 69px);
+    padding: 40px 24px 48px;
     align-items: center;
+    align-content: center;
     grid-template-columns: 1.12fr 0.88fr;
+    box-sizing: border-box;
   }
 
   .hero-content {
@@ -350,13 +354,26 @@ a {
 
   .hero h1 {
     max-width: none;
-    margin: 0 0 28px;
-    font-size: clamp(2rem, 2.75vw, 2.5rem);
+    margin: 0 0 22px;
+    font-size: clamp(1.95rem, 2.6vw, 2.4rem);
     line-height: 1.14;
   }
 
   .hero-eyebrow {
-    margin: 0 0 16px;
+    margin: 0 0 14px;
+  }
+
+  .hero-ctas {
+    margin-bottom: 0;
+  }
+
+  .hero-proof {
+    margin-top: 14px;
+  }
+
+  .hero-dashboard .dash-card {
+    transform: scale(0.94);
+    transform-origin: center center;
   }
 
   .hero::before {

@@ -17,8 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=10" />
-    <link rel="stylesheet" href="illustrations.css?v=10" />
+    <link rel="stylesheet" href="styles.css?v=11" />
+    <link rel="stylesheet" href="illustrations.css?v=11" />
     <script>
       (function () {
         const stored = localStorage.getItem("whisk-theme");
@@ -176,72 +176,135 @@
 
         <div class="hero-inner">
           <div class="hero-content">
-            <p class="hero-eyebrow">AI-powered forecasting &amp; operations for restaurants</p>
+            <p class="hero-badge"><span class="hero-badge-dot" aria-hidden="true"></span> Founding pilot · Boston area</p>
             <h1>Operational infra and decision intelligence for food-service operations.</h1>
             <p class="hero-sub">
               Forecast demand, right-size prep and labor, and cut waste — with one intelligence
               layer on top of the POS and inventory tools you already use.
             </p>
             <div class="hero-ctas">
-              <a href="https://calendly.com/msathvika24/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Join the pilot</a>
-              <a href="#how-it-works" class="btn btn-secondary">How it Works</a>
+              <a href="https://calendly.com/msathvika24/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book your demo</a>
+              <a href="#how-it-works" class="btn btn-secondary">See how it works</a>
             </div>
-            <p class="hero-proof">
-              3 founding pilot partners · Integrates with Toast, Square &amp; more
-            </p>
           </div>
 
           <div class="hero-dashboard" aria-hidden="true">
             <div class="hero-dashboard-shell">
-              <div class="dash-card dash-card--hero">
-                <div class="dash-topbar">
-                  <span class="dash-dot"></span>
-                  <span class="dash-dot"></span>
-                  <span class="dash-dot"></span>
-                  <span class="dash-topbar-title">Whisk Ops · Downtown location</span>
-                </div>
-                <div class="dash-body">
-                  <div class="dash-main">
-                    <div class="dash-header">
-                      <span>Tomorrow's forecast</span>
-                      <span class="dash-badge">Demand intelligence</span>
-                    </div>
-                    <div class="dash-metrics">
-                      <div>
-                        <span class="dash-value">TBD</span>
-                        <span class="dash-label">Forecast accuracy</span>
-                      </div>
-                      <div>
-                        <span class="dash-value">15-25%</span>
-                        <span class="dash-label">Waste reduction target</span>
-                      </div>
-                      <div>
-                        <span class="dash-value">8×</span>
-                        <span class="dash-label">Waste ROI</span>
-                      </div>
-                    </div>
-                    <div class="dash-chart-mini">
-                      <span style="--h: 45%"></span>
-                      <span style="--h: 62%"></span>
-                      <span style="--h: 78%"></span>
-                      <span style="--h: 92%"></span>
-                      <span style="--h: 85%"></span>
-                      <span style="--h: 70%"></span>
-                      <span style="--h: 58%"></span>
+              <div class="dash-app">
+                <header class="dash-app-bar">
+                  <div class="dash-store">
+                    <span class="dash-store-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 10h16v10H4V10zM8 6h8v4H8V6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </span>
+                    <div>
+                      <strong>Pilot Location</strong>
+                      <span>Boston, MA</span>
                     </div>
                   </div>
-                  <aside class="dash-side">
-                    <p class="dash-side-title">Saturday dinner</p>
-                    <ul class="dash-side-list">
-                      <li><span>6–7pm covers</span><strong>142</strong></li>
-                      <li><span>Line cooks</span><strong>4</strong></li>
-                      <li><span>Prep batches</span><strong>12</strong></li>
-                      <li><span>Status</span><strong class="dash-status">On track</strong></li>
+                  <div class="dash-search">Search forecasts &amp; prep items</div>
+                  <div class="dash-user">
+                    <span class="dash-avatar">GM</span>
+                    <div>
+                      <strong>General Manager</strong>
+                      <span>Multi-unit</span>
+                    </div>
+                  </div>
+                </header>
+
+                <div class="dash-app-body">
+                  <div class="dash-app-main">
+                    <div class="dash-greet">
+                      <h3>Tomorrow's forecast</h3>
+                      <span class="dash-time">Updated 2h ago</span>
+                    </div>
+
+                    <div class="dash-stat-row">
+                      <article class="dash-stat-card">
+                        <span class="dash-stat-icon dash-stat-icon--green" aria-hidden="true">↗</span>
+                        <div>
+                          <span class="dash-stat-value">142</span>
+                          <span class="dash-stat-label">Dinner covers</span>
+                          <span class="dash-stat-trend dash-stat-trend--up">+8% vs last Sat</span>
+                        </div>
+                      </article>
+                      <article class="dash-stat-card">
+                        <span class="dash-stat-icon dash-stat-icon--amber" aria-hidden="true">◷</span>
+                        <div>
+                          <span class="dash-stat-value">4</span>
+                          <span class="dash-stat-label">Line cooks needed</span>
+                          <span class="dash-stat-trend">6–9pm rush</span>
+                        </div>
+                      </article>
+                      <article class="dash-stat-card">
+                        <span class="dash-stat-icon dash-stat-icon--blue" aria-hidden="true">◎</span>
+                        <div>
+                          <span class="dash-stat-value">15-25%</span>
+                          <span class="dash-stat-label">Waste reduction</span>
+                          <span class="dash-stat-trend dash-stat-trend--up">Target range</span>
+                        </div>
+                      </article>
+                    </div>
+
+                    <div class="dash-panels">
+                      <div class="dash-panel">
+                        <p class="dash-panel-title">Hourly covers</p>
+                        <div class="dash-chart-mini">
+                          <span style="--h: 42%"></span>
+                          <span style="--h: 58%"></span>
+                          <span style="--h: 74%"></span>
+                          <span style="--h: 92%"></span>
+                          <span style="--h: 88%"></span>
+                          <span style="--h: 65%"></span>
+                          <span style="--h: 48%"></span>
+                        </div>
+                      </div>
+                      <div class="dash-panel">
+                        <p class="dash-panel-title">Top prep items</p>
+                        <ul class="dash-prep-list">
+                          <li><span>Salmon bowls</span><strong>48 units</strong></li>
+                          <li><span>House salad</span><strong>36 units</strong></li>
+                          <li><span>Fries batch</span><strong>24 units</strong></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <aside class="dash-orders">
+                    <div class="dash-tabs" role="tablist" aria-hidden="true">
+                      <span class="dash-tab is-active">Prep queue</span>
+                      <span class="dash-tab">Labor plan</span>
+                    </div>
+                    <div class="dash-order-search">Search a station</div>
+                    <ul class="dash-order-list">
+                      <li>
+                        <div><strong>Grill station</strong><span>8 prep tasks</span></div>
+                        <span class="dash-pill dash-pill--ready">Ready</span>
+                      </li>
+                      <li>
+                        <div><strong>Cold prep</strong><span>5 prep tasks</span></div>
+                        <span class="dash-pill dash-pill--ready">On track</span>
+                      </li>
+                      <li>
+                        <div><strong>Bar</strong><span>3 prep tasks</span></div>
+                        <span class="dash-pill dash-pill--progress">In progress</span>
+                      </li>
+                      <li>
+                        <div><strong>Servers</strong><span>6 scheduled</span></div>
+                        <span class="dash-pill dash-pill--progress">Staffing</span>
+                      </li>
                     </ul>
                   </aside>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div class="hero-logos" aria-label="Integrations">
+            <span>Toast</span>
+            <span>Square</span>
+            <span>Lightspeed</span>
+            <span>MarketMan</span>
+            <span>Winnow</span>
           </div>
         </div>
       </section>
@@ -1107,6 +1170,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=10"></script>
+    <script src="script.js?v=11"></script>
   </body>
 </html>

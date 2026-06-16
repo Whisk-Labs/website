@@ -317,8 +317,8 @@ a {
   justify-content: center;
   max-width: none;
   margin: 0 auto;
-  padding: 32px 20px 0;
-  overflow: hidden;
+  padding: 32px 20px 24px;
+  overflow: visible;
   isolation: isolate;
 }
 
@@ -329,8 +329,7 @@ a {
   z-index: 1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 70% 50% at 50% 12%, var(--bg-white) 0%, transparent 68%),
-    radial-gradient(ellipse 90% 40% at 50% 100%, var(--accent-soft) 0%, transparent 72%);
+    radial-gradient(ellipse 70% 50% at 50% 12%, var(--bg-white) 0%, transparent 68%);
 }
 
 .hero::after {
@@ -388,6 +387,12 @@ a {
 
 .hero-title-line {
   display: block;
+}
+
+@media (min-width: 961px) {
+  .hero-title-line:first-child {
+    white-space: nowrap;
+  }
 }
 
 .hero-sub {
@@ -744,17 +749,17 @@ a {
 
 @media (min-width: 961px) {
   .hero {
-    height: calc(100svh - 69px);
     min-height: calc(100svh - 69px);
-    max-height: calc(100svh - 69px);
-    padding: 16px 24px 20px;
+    height: auto;
+    max-height: none;
+    padding: 14px 24px 28px;
     box-sizing: border-box;
     align-items: center;
   }
 
   .hero-inner {
-    height: 100%;
-    gap: 14px;
+    height: auto;
+    gap: 12px;
     justify-content: center;
     min-height: 0;
   }
@@ -764,26 +769,26 @@ a {
   }
 
   .hero h1 {
-    margin: 0 auto 10px;
-    max-width: 900px;
-    font-size: clamp(1.85rem, 2.8vw, 2.5rem);
-    line-height: 1.14;
+    margin: 0 auto 8px;
+    max-width: 920px;
+    font-size: clamp(1.55rem, 2.2vw, 2rem);
+    line-height: 1.15;
   }
 
   .hero-sub {
-    margin-bottom: 14px;
-    font-size: 0.95rem;
-    line-height: 1.55;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .hero-badge {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .hero-dashboard {
     flex-shrink: 0;
     width: 100%;
-    max-width: 920px;
+    max-width: 880px;
   }
 
   .hero-dashboard-shell {
@@ -792,21 +797,28 @@ a {
     max-height: none;
   }
 
+  .dash-app-bar {
+    padding: 10px 14px;
+  }
+
   .dash-app-main,
   .dash-orders {
-    padding-top: 12px;
-    padding-bottom: 14px;
+    padding: 10px 14px 12px;
   }
 
   .dash-greet {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+  }
+
+  .dash-stat-card {
+    padding: 10px;
   }
 
   .hero-logos {
     flex-shrink: 0;
-    padding: 2px 0 0;
-    font-size: 12px;
-    gap: 16px 24px;
+    padding: 6px 0 0;
+    font-size: 11px;
+    gap: 14px 22px;
   }
 }
 
@@ -1178,11 +1190,11 @@ textarea {
 }
 
 .hero h1 {
-  margin: 0 auto 20px;
-  max-width: 720px;
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  margin: 0 auto 16px;
+  max-width: 920px;
+  font-size: clamp(1.45rem, 4vw, 2rem);
   font-weight: 700;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--text);
 }

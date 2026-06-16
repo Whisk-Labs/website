@@ -644,6 +644,12 @@ a {
   background: var(--bg-card);
 }
 
+.dash-panel--chart {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
 .dash-panel--split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -942,7 +948,7 @@ a {
   }
 
   .dash-chart-mini {
-    height: 42px;
+    min-height: 42px;
   }
 
   .dash-order-list li {
@@ -1017,7 +1023,9 @@ a {
   display: flex;
   align-items: flex-end;
   gap: 5px;
-  height: 48px;
+  flex: 1;
+  min-height: 48px;
+  height: auto;
 }
 
 .dash-chart-mini span {

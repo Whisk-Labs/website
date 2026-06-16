@@ -17,8 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20" />
-    <link rel="stylesheet" href="illustrations.css?v=20" />
+    <link rel="stylesheet" href="styles.css?v=21" />
+    <link rel="stylesheet" href="illustrations.css?v=21" />
     <script>
       (function () {
         const stored = localStorage.getItem("whisk-theme");
@@ -204,7 +204,7 @@
                     </span>
                     <div>
                       <strong>Pilot Location</strong>
-                      <span>Boston, MA</span>
+                      <span>Boston, MA <span class="dash-store-scope">· 3 of 12 locations</span></span>
                     </div>
                   </div>
                   <div class="dash-search">Search forecasts &amp; prep items</div>
@@ -242,27 +242,30 @@
                         </div>
                       </article>
                       <article class="dash-stat-card">
-                        <span class="dash-stat-icon dash-stat-icon--blue dash-icon-box" aria-hidden="true"><span class="dash-icon-label">◎</span></span>
+                        <span class="dash-stat-icon dash-stat-icon--green dash-icon-box" aria-hidden="true"><span class="dash-icon-label">$</span></span>
                         <div>
-                          <span class="dash-stat-value">15-25%</span>
-                          <span class="dash-stat-label">Waste reduction</span>
-                          <span class="dash-stat-trend dash-stat-trend--up">Target range</span>
+                          <span class="dash-stat-value">$340</span>
+                          <span class="dash-stat-label">Surplus flagged</span>
+                          <span class="dash-stat-trend">Forecasted waste avoided</span>
                         </div>
                       </article>
                     </div>
 
                     <div class="dash-panels">
                       <div class="dash-panel">
-                        <p class="dash-panel-title">Hourly covers</p>
+                        <div class="dash-panel-head">
+                          <p class="dash-panel-title">Hourly covers</p>
+                          <span class="dash-panel-note">142 total · 5–11pm</span>
+                        </div>
                         <div class="dash-chart-mini" aria-hidden="true">
-                          <span style="--h: 38%"></span>
-                          <span style="--h: 52%"></span>
-                          <span style="--h: 68%"></span>
-                          <span style="--h: 88%"></span>
-                          <span style="--h: 92%"></span>
-                          <span style="--h: 74%"></span>
-                          <span style="--h: 56%"></span>
-                          <span style="--h: 42%"></span>
+                          <span style="--h: 36%" title="5pm · 10 covers"></span>
+                          <span style="--h: 57%" title="6pm · 16 covers"></span>
+                          <span style="--h: 79%" title="7pm · 22 covers"></span>
+                          <span style="--h: 100%" title="8pm · 28 covers"></span>
+                          <span style="--h: 86%" title="9pm · 24 covers"></span>
+                          <span style="--h: 64%" title="10pm · 18 covers"></span>
+                          <span style="--h: 50%" title="11pm · 14 covers"></span>
+                          <span style="--h: 36%" title="12am · 10 covers"></span>
                         </div>
                       </div>
                       <div class="dash-panel dash-panel--split">
@@ -287,12 +290,12 @@
                             <li>
                               <span class="dash-menu-thumb dash-menu-thumb--fries" aria-hidden="true"></span>
                               <span class="dash-menu-name">Fries batch</span>
-                              <strong>2h</strong>
+                              <strong class="dash-menu-timing">Depletes in 2h</strong>
                             </li>
                             <li>
                               <span class="dash-menu-thumb dash-menu-thumb--buns" aria-hidden="true"></span>
                               <span class="dash-menu-name">Brioche buns</span>
-                              <strong>4h</strong>
+                              <strong class="dash-menu-timing">Depletes in 4h</strong>
                             </li>
                           </ul>
                         </div>
@@ -308,7 +311,7 @@
                     <div class="dash-order-search">Search a station</div>
                     <ul class="dash-order-list">
                       <li>
-                        <div><strong>Grill station</strong><span>8 prep tasks</span></div>
+                        <div><strong>Bar</strong><span>3 prep tasks</span></div>
                         <span class="dash-pill dash-pill--ready">Ready</span>
                       </li>
                       <li>
@@ -316,7 +319,7 @@
                         <span class="dash-pill dash-pill--ready">On track</span>
                       </li>
                       <li>
-                        <div><strong>Bar</strong><span>3 prep tasks</span></div>
+                        <div><strong>Grill station</strong><span>8 prep tasks</span></div>
                         <span class="dash-pill dash-pill--progress">In progress</span>
                       </li>
                     </ul>

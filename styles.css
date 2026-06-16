@@ -493,6 +493,11 @@ a {
   color: var(--text-faint);
 }
 
+.dash-store-scope {
+  color: var(--text-faint);
+  font-weight: 500;
+}
+
 .dash-search,
 .dash-order-search {
   padding: 9px 14px;
@@ -659,6 +664,25 @@ a {
   color: var(--text-faint);
 }
 
+.dash-panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.dash-panel-head .dash-panel-title {
+  margin: 0;
+}
+
+.dash-panel-note {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
 .dash-menu-list {
   list-style: none;
   margin: 0;
@@ -687,6 +711,14 @@ a {
   font-size: 10px;
   font-weight: 700;
   color: var(--text);
+}
+
+.dash-menu-timing {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--text-faint);
+  white-space: nowrap;
+  text-align: right;
 }
 
 .dash-menu-thumb {

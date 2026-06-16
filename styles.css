@@ -337,6 +337,28 @@ a {
 }
 
 @media (min-width: 961px) {
+  .hero {
+    min-height: calc(100svh - 69px);
+    padding: 56px 24px 72px;
+    align-items: center;
+    grid-template-columns: 1.12fr 0.88fr;
+  }
+
+  .hero-content {
+    align-self: center;
+  }
+
+  .hero h1 {
+    max-width: none;
+    margin: 0 0 28px;
+    font-size: clamp(2rem, 2.75vw, 2.5rem);
+    line-height: 1.14;
+  }
+
+  .hero-eyebrow {
+    margin: 0 0 16px;
+  }
+
   .hero::before {
     background:
       radial-gradient(ellipse 68% 62% at 26% 46%, var(--bg-white) 52%, transparent 76%),

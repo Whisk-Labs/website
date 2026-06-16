@@ -17,8 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=19" />
-    <link rel="stylesheet" href="illustrations.css?v=19" />
+    <link rel="stylesheet" href="styles.css?v=20" />
+    <link rel="stylesheet" href="illustrations.css?v=20" />
     <script>
       (function () {
         const stored = localStorage.getItem("whisk-theme");
@@ -196,8 +196,11 @@
               <div class="dash-app">
                 <header class="dash-app-bar">
                   <div class="dash-store">
-                    <span class="dash-store-icon" aria-hidden="true">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 10h16v10H4V10zM8 6h8v4H8V6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    <span class="dash-store-icon dash-icon-box" aria-hidden="true">
+                      <svg class="dash-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <rect x="4" y="9" width="16" height="11" rx="1.5" stroke="currentColor" stroke-width="1.5" />
+                        <path d="M8 9V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                      </svg>
                     </span>
                     <div>
                       <strong>Pilot Location</strong>
@@ -206,7 +209,7 @@
                   </div>
                   <div class="dash-search">Search forecasts &amp; prep items</div>
                   <div class="dash-user">
-                    <span class="dash-avatar">GM</span>
+                    <span class="dash-avatar dash-icon-box" aria-hidden="true"><span class="dash-icon-label">GM</span></span>
                     <div>
                       <strong>General Manager</strong>
                       <span>Multi-unit</span>
@@ -223,7 +226,7 @@
 
                     <div class="dash-stat-row">
                       <article class="dash-stat-card">
-                        <span class="dash-stat-icon dash-stat-icon--green" aria-hidden="true">↗</span>
+                        <span class="dash-stat-icon dash-stat-icon--green dash-icon-box" aria-hidden="true"><span class="dash-icon-label">↗</span></span>
                         <div>
                           <span class="dash-stat-value">142</span>
                           <span class="dash-stat-label">Dinner covers</span>
@@ -231,7 +234,7 @@
                         </div>
                       </article>
                       <article class="dash-stat-card">
-                        <span class="dash-stat-icon dash-stat-icon--amber" aria-hidden="true">◷</span>
+                        <span class="dash-stat-icon dash-stat-icon--amber dash-icon-box" aria-hidden="true"><span class="dash-icon-label">◷</span></span>
                         <div>
                           <span class="dash-stat-value">4</span>
                           <span class="dash-stat-label">Line cooks needed</span>
@@ -239,7 +242,7 @@
                         </div>
                       </article>
                       <article class="dash-stat-card">
-                        <span class="dash-stat-icon dash-stat-icon--blue" aria-hidden="true">◎</span>
+                        <span class="dash-stat-icon dash-stat-icon--blue dash-icon-box" aria-hidden="true"><span class="dash-icon-label">◎</span></span>
                         <div>
                           <span class="dash-stat-value">15-25%</span>
                           <span class="dash-stat-label">Waste reduction</span>

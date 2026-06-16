@@ -17,8 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=23" />
-    <link rel="stylesheet" href="illustrations.css?v=23" />
+    <link rel="stylesheet" href="styles.css?v=25" />
+    <link rel="stylesheet" href="illustrations.css?v=25" />
     <script>
       (function () {
         const stored = localStorage.getItem("whisk-theme");
@@ -258,14 +258,14 @@
                           <span class="dash-panel-note">142 total · 5–11pm</span>
                         </div>
                         <div class="dash-chart-mini" aria-hidden="true">
-                          <span style="--h: 36%" title="5pm · 10 covers"></span>
-                          <span style="--h: 57%" title="6pm · 16 covers"></span>
-                          <span style="--h: 79%" title="7pm · 22 covers"></span>
-                          <span style="--h: 100%" title="8pm · 28 covers"></span>
-                          <span style="--h: 86%" title="9pm · 24 covers"></span>
-                          <span style="--h: 64%" title="10pm · 18 covers"></span>
-                          <span style="--h: 50%" title="11pm · 14 covers"></span>
-                          <span style="--h: 36%" title="12am · 10 covers"></span>
+                          <span class="dash-chart-bar" style="--h: 36%" title="5pm · 10 covers"><i></i></span>
+                          <span class="dash-chart-bar" style="--h: 57%" title="6pm · 16 covers"><i></i></span>
+                          <span class="dash-chart-bar" style="--h: 79%" title="7pm · 22 covers"><i></i></span>
+                          <span class="dash-chart-bar" style="--h: 100%" title="8pm · 28 covers"><i></i></span>
+                          <span class="dash-chart-bar" style="--h: 86%" title="9pm · 24 covers"><i></i></span>
+                          <span class="dash-chart-bar" style="--h: 64%" title="10pm · 18 covers"><i></i></span>
+                          <span class="dash-chart-bar" style="--h: 50%" title="11pm · 14 covers"><i></i></span>
+                          <span class="dash-chart-bar" style="--h: 36%" title="12am · 10 covers"><i></i></span>
                         </div>
                       </div>
                       <div class="dash-panel dash-panel--split">
@@ -274,28 +274,36 @@
                           <ul class="dash-menu-list">
                             <li>
                               <span class="dash-menu-thumb dash-menu-thumb--salmon" aria-hidden="true"></span>
-                              <span class="dash-menu-name">Salmon bowls</span>
-                              <strong>48</strong>
+                              <div class="dash-menu-meta">
+                                <span class="dash-menu-name">Salmon bowls</span>
+                                <span class="dash-menu-detail">48 portions</span>
+                              </div>
                             </li>
                             <li>
                               <span class="dash-menu-thumb dash-menu-thumb--salad" aria-hidden="true"></span>
-                              <span class="dash-menu-name">House salad</span>
-                              <strong>36</strong>
+                              <div class="dash-menu-meta">
+                                <span class="dash-menu-name">House salad</span>
+                                <span class="dash-menu-detail">36 portions</span>
+                              </div>
                             </li>
                           </ul>
                         </div>
-                        <div class="dash-mini-col">
+                        <div class="dash-mini-col dash-mini-col--stock">
                           <p class="dash-panel-title">Low stock</p>
                           <ul class="dash-menu-list">
                             <li>
                               <span class="dash-menu-thumb dash-menu-thumb--fries" aria-hidden="true"></span>
-                              <span class="dash-menu-name">Fries batch</span>
-                              <strong class="dash-menu-timing">Depletes in 2h</strong>
+                              <div class="dash-menu-meta">
+                                <span class="dash-menu-name">Fries batch</span>
+                                <span class="dash-menu-detail">Depletes in 2h</span>
+                              </div>
                             </li>
                             <li>
                               <span class="dash-menu-thumb dash-menu-thumb--buns" aria-hidden="true"></span>
-                              <span class="dash-menu-name">Brioche buns</span>
-                              <strong class="dash-menu-timing">Depletes in 4h</strong>
+                              <div class="dash-menu-meta">
+                                <span class="dash-menu-name">Brioche buns</span>
+                                <span class="dash-menu-detail">Depletes in 4h</span>
+                              </div>
                             </li>
                           </ul>
                         </div>

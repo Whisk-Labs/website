@@ -538,7 +538,8 @@ a {
 .dash-app-main {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  height: 100%;
+  min-height: 0;
   padding: 16px 18px 18px;
   border-right: 1px solid var(--border);
 }
@@ -636,9 +637,9 @@ a {
 
 .dash-panels {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1.02fr 0.98fr;
   gap: 8px;
-  flex: 1;
+  flex: 1 1 0;
   min-height: 0;
   align-items: stretch;
 }
@@ -652,7 +653,7 @@ a {
 
 .dash-panel--chart {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto minmax(0, 1fr);
   min-height: 0;
   height: 100%;
   padding-bottom: 10px;
@@ -660,15 +661,19 @@ a {
 
 .dash-panel--split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  padding: 10px 12px;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 8px;
+  padding: 10px 10px;
   height: 100%;
   align-content: start;
 }
 
 .dash-mini-col {
   min-width: 0;
+}
+
+.dash-mini-col--stock .dash-menu-name {
+  font-size: 8.5px;
 }
 
 .dash-panel-title {
@@ -710,17 +715,32 @@ a {
 
 .dash-menu-list li {
   display: grid;
-  grid-template-columns: 28px 1fr auto;
-  align-items: center;
-  gap: 8px;
+  grid-template-columns: 24px 1fr;
+  align-items: start;
+  gap: 7px;
   font-size: 10px;
   color: var(--text-muted);
 }
 
+.dash-menu-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
 .dash-menu-name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.dash-menu-detail {
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-faint);
 }
 
 .dash-menu-list strong {
@@ -729,18 +749,10 @@ a {
   color: var(--text);
 }
 
-.dash-menu-timing {
-  font-size: 8px;
-  font-weight: 600;
-  color: var(--text-faint);
-  white-space: nowrap;
-  text-align: right;
-}
-
 .dash-menu-thumb {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
   border: 1px solid var(--border);
 }
 
@@ -796,7 +808,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  flex: 1;
 }
 
 .dash-tabs {
@@ -1027,17 +1038,26 @@ a {
 
 .dash-chart-mini {
   display: flex;
-  align-items: flex-end;
+  align-items: stretch;
   gap: 5px;
   height: 100%;
   min-height: 0;
 }
 
-.dash-chart-mini span {
+.dash-chart-bar {
   flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 0;
+  height: 100%;
+}
+
+.dash-chart-bar i {
+  display: block;
+  width: 100%;
   height: var(--h);
   min-height: 4px;
-  align-self: flex-end;
   border-radius: 4px 4px 2px 2px;
   background: linear-gradient(180deg, var(--accent) 0%, var(--accent-illo) 100%);
 }

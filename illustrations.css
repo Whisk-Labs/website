@@ -281,11 +281,6 @@
 }
 
 @media (max-width: 720px) {
-  .hero {
-    min-height: auto;
-    padding: 48px 20px 56px;
-  }
-
   .deco-layer .illo:not(.hero-illo) {
     display: none;
   }

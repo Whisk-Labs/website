@@ -17,8 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=16" />
-    <link rel="stylesheet" href="illustrations.css?v=16" />
+    <link rel="stylesheet" href="styles.css?v=18" />
+    <link rel="stylesheet" href="illustrations.css?v=18" />
     <script>
       (function () {
         const stored = localStorage.getItem("whisk-theme");
@@ -247,6 +247,54 @@
                         </div>
                       </article>
                     </div>
+
+                    <div class="dash-panels">
+                      <div class="dash-panel">
+                        <p class="dash-panel-title">Hourly covers</p>
+                        <div class="dash-chart-mini" aria-hidden="true">
+                          <span style="--h: 38%"></span>
+                          <span style="--h: 52%"></span>
+                          <span style="--h: 68%"></span>
+                          <span style="--h: 88%"></span>
+                          <span style="--h: 92%"></span>
+                          <span style="--h: 74%"></span>
+                          <span style="--h: 56%"></span>
+                          <span style="--h: 42%"></span>
+                        </div>
+                      </div>
+                      <div class="dash-panel dash-panel--split">
+                        <div class="dash-mini-col">
+                          <p class="dash-panel-title">Popular prep</p>
+                          <ul class="dash-menu-list">
+                            <li>
+                              <span class="dash-menu-thumb dash-menu-thumb--salmon" aria-hidden="true"></span>
+                              <span class="dash-menu-name">Salmon bowls</span>
+                              <strong>48</strong>
+                            </li>
+                            <li>
+                              <span class="dash-menu-thumb dash-menu-thumb--salad" aria-hidden="true"></span>
+                              <span class="dash-menu-name">House salad</span>
+                              <strong>36</strong>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="dash-mini-col">
+                          <p class="dash-panel-title">Low stock</p>
+                          <ul class="dash-menu-list">
+                            <li>
+                              <span class="dash-menu-thumb dash-menu-thumb--fries" aria-hidden="true"></span>
+                              <span class="dash-menu-name">Fries batch</span>
+                              <strong>2h</strong>
+                            </li>
+                            <li>
+                              <span class="dash-menu-thumb dash-menu-thumb--buns" aria-hidden="true"></span>
+                              <span class="dash-menu-name">Brioche buns</span>
+                              <strong>4h</strong>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <aside class="dash-orders">
@@ -263,6 +311,10 @@
                       <li>
                         <div><strong>Cold prep</strong><span>5 prep tasks</span></div>
                         <span class="dash-pill dash-pill--ready">On track</span>
+                      </li>
+                      <li>
+                        <div><strong>Bar</strong><span>3 prep tasks</span></div>
+                        <span class="dash-pill dash-pill--progress">In progress</span>
                       </li>
                     </ul>
                   </aside>

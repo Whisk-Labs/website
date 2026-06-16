@@ -343,10 +343,10 @@ a {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1040px;
+  max-width: 960px;
   margin: 0 auto;
   text-align: center;
-  gap: 20px;
+  gap: 18px;
 }
 
 .hero-content {
@@ -396,11 +396,15 @@ a {
 }
 
 .hero-sub {
-  margin: 0 auto 22px;
-  max-width: 540px;
-  font-size: 1rem;
-  line-height: 1.65;
+  margin: 0 auto 18px;
+  max-width: 520px;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--text-muted);
+}
+
+.hero-ctas {
+  margin-bottom: 4px;
 }
 
 .hero-dashboard {
@@ -483,21 +487,27 @@ a {
 }
 
 .dash-avatar {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 32px;
   height: 32px;
   border-radius: 50%;
   background: var(--accent);
   color: var(--btn-primary-text);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-align: center;
+  overflow: hidden;
 }
 
 .dash-app-body {
   display: grid;
   grid-template-columns: 1fr 220px;
+  align-items: stretch;
   min-height: 0;
 }
 
@@ -528,8 +538,8 @@ a {
 .dash-stat-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 0;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 .dash-stat-card {
@@ -597,24 +607,88 @@ a {
 
 .dash-panels {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 10px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 8px;
 }
 
 .dash-panel {
-  padding: 12px;
+  padding: 10px 12px 12px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: var(--bg-card);
 }
 
+.dash-panel--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px 12px;
+}
+
+.dash-mini-col {
+  min-width: 0;
+}
+
 .dash-panel-title {
-  margin: 0 0 10px;
-  font-size: 10px;
+  margin: 0 0 8px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-faint);
+}
+
+.dash-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.dash-menu-list li {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.dash-menu-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dash-menu-list strong {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dash-menu-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.dash-menu-thumb--salmon {
+  background: linear-gradient(135deg, #d4845f 0%, #b85c42 100%);
+}
+
+.dash-menu-thumb--salad {
+  background: linear-gradient(135deg, #8fb87a 0%, #6d9660 100%);
+}
+
+.dash-menu-thumb--fries {
+  background: linear-gradient(135deg, #e8c56a 0%, #c9a03f 100%);
+}
+
+.dash-menu-thumb--buns {
+  background: linear-gradient(135deg, #d4b896 0%, #a88762 100%);
 }
 
 .dash-prep-list {
@@ -640,8 +714,20 @@ a {
 }
 
 .dash-orders {
-  padding: 14px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 12px 14px;
   background: var(--bg-muted);
+}
+
+.dash-order-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
 }
 
 .dash-tabs {
@@ -668,15 +754,6 @@ a {
 
 .dash-order-search {
   margin-bottom: 10px;
-}
-
-.dash-order-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 }
 
 .dash-order-list li {
@@ -728,13 +805,14 @@ a {
   justify-content: center;
   gap: 20px 28px;
   width: 100%;
-  padding: 8px 0 20px;
+  margin-top: 6px;
+  padding: 4px 0 16px;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-faint);
-  opacity: 0.55;
+  opacity: 0.62;
 }
 
 .dash-card {
@@ -806,6 +884,18 @@ a {
     padding: 10px 14px 12px;
   }
 
+  .dash-panels {
+    gap: 6px;
+  }
+
+  .dash-chart-mini {
+    height: 42px;
+  }
+
+  .dash-order-list li {
+    padding: 8px;
+  }
+
   .dash-greet {
     margin-bottom: 8px;
   }
@@ -873,8 +963,8 @@ a {
 .dash-chart-mini {
   display: flex;
   align-items: flex-end;
-  gap: 6px;
-  height: 64px;
+  gap: 5px;
+  height: 48px;
 }
 
 .dash-chart-mini span {
@@ -2631,6 +2721,10 @@ textarea {
 
   .dash-panels {
     grid-template-columns: 1fr;
+  }
+
+  .dash-panel--split {
+    grid-template-columns: 1fr 1fr;
   }
 
   .dash-orders {

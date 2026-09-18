@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=27" />
+    <link rel="stylesheet" href="styles.css?v=31" />
     <link rel="stylesheet" href="illustrations.css?v=27" />
     <script>
       (function () {
@@ -186,7 +186,7 @@
               layer on top of the POS and inventory tools you already use.
             </p>
             <div class="hero-ctas">
-              <a href="https://calendly.com/msathvika24/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book your demo</a>
+              <a href="#book-demo" class="btn btn-primary">Book your demo</a>
               <a href="#how-it-works" class="btn btn-secondary">See how it works</a>
             </div>
           </div>
@@ -1035,25 +1035,11 @@
         </div>
       </section>
 
-      <!-- CTA -->
-      <section id="pilot" class="cta-section">
-        <div class="cta-card">
-          <div class="cta-illo illo illo--float cta-illo--left" aria-hidden="true">
-            <svg viewBox="0 0 160 160" fill="none">
-              <rect x="25" y="25" width="110" height="110" rx="4" stroke="currentColor" stroke-width="1.2"/>
-              <path d="M25 55h110M25 85h110M25 115h110" stroke="currentColor" stroke-width="1"/>
-              <rect x="40" y="65" width="24" height="14" rx="2" stroke="currentColor" stroke-width="1"/>
-              <rect x="72" y="62" width="20" height="18" rx="2" stroke="currentColor" stroke-width="1"/>
-            </svg>
-          </div>
-          <div class="cta-illo illo illo--float-slow cta-illo--right" aria-hidden="true">
-            <svg viewBox="0 0 160 160" fill="none">
-              <ellipse cx="80" cy="110" rx="50" ry="18" stroke="currentColor" stroke-width="1.2"/>
-              <path d="M45 110c0-35 70-35 70 0" stroke="currentColor" stroke-width="1.2"/>
-              <path d="M58 68c0-14 24-14 24 0M92 65c0-12 20-12 20 0" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
-              <path d="M30 135h100" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-            </svg>
-          </div>
+      <!-- Book a demo / founding pilot -->
+      <section id="book-demo" class="demo-book-section">
+        <span id="pilot" class="section-anchor" aria-hidden="true"></span>
+
+        <div class="demo-book-intro">
           <h2>Join our founding pilot</h2>
           <p>
             Every restaurant runs differently. Book a quick call or tell us about
@@ -1062,86 +1048,111 @@
           <div class="cta-actions">
             <a href="https://calendly.com/msathvika24/30min" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Book a 30-min call</a>
           </div>
+        </div>
 
-          <div class="cta-divider" aria-hidden="true">
-            <span>or apply below</span>
+        <div class="demo-book-inner">
+          <div class="demo-book-steps-card">
+            <h2>What the pilot looks like</h2>
+            <p class="demo-book-steps-lead">
+              Tell us how your locations run today. We'll map a pilot that plugs into the tools you already use.
+            </p>
+            <ol class="demo-book-steps">
+              <li>
+                <span class="demo-book-step-title">1. Walk the line with us</span>
+                <span class="demo-book-step-desc">We sit in on a real service day: covers, prep handoffs, rush windows, and where decisions get made under pressure.</span>
+              </li>
+              <li>
+                <span class="demo-book-step-title">2. Connect your stack</span>
+                <span class="demo-book-step-desc">We link your POS and inventory data, then calibrate forecasts to your menus, stations, and day-part patterns.</span>
+              </li>
+              <li>
+                <span class="demo-book-step-title">3. Run the numbers</span>
+                <span class="demo-book-step-desc">You get daily prep, labor, and ordering guidance in the first weeks, with waste and margin impact you can actually track.</span>
+              </li>
+            </ol>
           </div>
 
-          <form
-            id="pilot-form"
-            class="pilot-form"
-            action="https://formsubmit.co/msath@bu.edu"
-            method="POST"
-          >
-            <input type="hidden" name="_subject" value="Whisk Labs Pilot Inquiry" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="" />
-            <input
-              type="text"
-              name="_gotcha"
-              class="pilot-form-honeypot"
-              tabindex="-1"
-              autocomplete="off"
-              aria-hidden="true"
-            />
-
-            <div class="pilot-form-grid">
-              <label class="pilot-field">
-                <span class="pilot-label">Restaurant name</span>
-                <input type="text" name="restaurant_name" required autocomplete="organization" />
-              </label>
-              <label class="pilot-field">
-                <span class="pilot-label">Your name</span>
-                <input type="text" name="contact_name" required autocomplete="name" />
-              </label>
-              <label class="pilot-field">
-                <span class="pilot-label">Email</span>
-                <input type="email" name="email" required autocomplete="email" />
-              </label>
-              <label class="pilot-field">
-                <span class="pilot-label">Phone <span class="pilot-optional">(optional)</span></span>
-                <input type="tel" name="phone" autocomplete="tel" />
-              </label>
-              <label class="pilot-field">
-                <span class="pilot-label">Number of locations</span>
-                <select name="locations" required>
-                  <option value="" disabled selected>Select one</option>
-                  <option value="1">1 location</option>
-                  <option value="2-5">2-5 locations</option>
-                  <option value="6-20">6-20 locations</option>
-                  <option value="20+">20+ locations</option>
-                </select>
-              </label>
-              <label class="pilot-field">
-                <span class="pilot-label">Biggest ops challenge</span>
-                <select name="pain_point" required>
-                  <option value="" disabled selected>Select one</option>
-                  <option value="Forecasting">Demand forecasting</option>
-                  <option value="Inventory">Inventory ordering</option>
-                  <option value="Labor">Labor scheduling</option>
-                  <option value="Prep">Prep quantities</option>
-                  <option value="Waste">Food waste</option>
-                  <option value="Other">Other</option>
-                </select>
-              </label>
-              <label class="pilot-field pilot-field--full">
-                <span class="pilot-label">Tell us more</span>
-                <textarea
-                  name="message"
-                  rows="4"
-                  placeholder="What does a typical week look like? What tools do you use today?"
-                  required
-                ></textarea>
-              </label>
+          <div class="demo-book-pilot-wrap">
+            <div class="cta-divider" aria-hidden="true">
+              <span>or apply below</span>
             </div>
 
-            <button type="submit" class="btn btn-secondary btn-lg pilot-form-submit">Send application</button>
-          </form>
+            <form
+              id="pilot-form"
+              class="pilot-form"
+              action="https://formsubmit.co/msath@bu.edu"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="Whisk Labs Pilot Inquiry" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="" />
+              <input
+                type="text"
+                name="_gotcha"
+                class="pilot-form-honeypot"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
 
-          <div id="pilot-form-success" class="pilot-form-success" hidden>
-            <p>Thanks for applying. We'll review your note and get back to you within 1-2 business days.</p>
-            <a href="https://calendly.com/msathvika24/30min" class="text-link" target="_blank" rel="noopener noreferrer">Want to talk sooner? Book a call →</a>
+              <div class="pilot-form-grid">
+                <label class="pilot-field">
+                  <span class="pilot-label">Restaurant name</span>
+                  <input type="text" name="restaurant_name" required autocomplete="organization" />
+                </label>
+                <label class="pilot-field">
+                  <span class="pilot-label">Your name</span>
+                  <input type="text" name="contact_name" required autocomplete="name" />
+                </label>
+                <label class="pilot-field">
+                  <span class="pilot-label">Email</span>
+                  <input type="email" name="email" required autocomplete="email" />
+                </label>
+                <label class="pilot-field">
+                  <span class="pilot-label">Phone <span class="pilot-optional">(optional)</span></span>
+                  <input type="tel" name="phone" autocomplete="tel" />
+                </label>
+                <label class="pilot-field">
+                  <span class="pilot-label">Number of locations</span>
+                  <select name="locations" required>
+                    <option value="" disabled selected>Select one</option>
+                    <option value="1">1 location</option>
+                    <option value="2-5">2-5 locations</option>
+                    <option value="6-20">6-20 locations</option>
+                    <option value="20+">20+ locations</option>
+                  </select>
+                </label>
+                <label class="pilot-field">
+                  <span class="pilot-label">Biggest ops challenge</span>
+                  <select name="pain_point" required>
+                    <option value="" disabled selected>Select one</option>
+                    <option value="Forecasting">Demand forecasting</option>
+                    <option value="Inventory">Inventory ordering</option>
+                    <option value="Labor">Labor scheduling</option>
+                    <option value="Prep">Prep quantities</option>
+                    <option value="Waste">Food waste</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </label>
+                <label class="pilot-field pilot-field--full">
+                  <span class="pilot-label">Tell us more</span>
+                  <textarea
+                    name="message"
+                    rows="4"
+                    placeholder="What does a typical week look like? What tools do you use today?"
+                    required
+                  ></textarea>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-secondary btn-lg pilot-form-submit">Send application</button>
+            </form>
+
+            <div id="pilot-form-success" class="pilot-form-success" hidden>
+              <p>Thanks for applying. We'll review your note and get back to you within 1-2 business days.</p>
+              <a href="https://calendly.com/msathvika24/30min" class="text-link" target="_blank" rel="noopener noreferrer">Want to talk sooner? Book a call →</a>
+            </div>
           </div>
         </div>
       </section>
@@ -1170,11 +1181,10 @@
             <span class="section-eyebrow">About Whisk Labs</span>
             <h2>Built with operators, backed by Boston University &amp; UMass Amherst</h2>
             <p>
-              Whisk Labs is a Boston-based startup building decision intelligence
+              Whisk Labs is a Silicon Valley–based startup building decision intelligence
               for restaurants, from single locations to growing chains. We're
-              piloting with founding partners across the Boston area, backed by
-              Boston University through Innovate@BU and an engineering team from
-              UMass Amherst.
+              piloting with founding partners, backed by Boston University through
+              Innovate@BU and an engineering team from UMass Amherst.
             </p>
           </div>
           <div class="about-cards">

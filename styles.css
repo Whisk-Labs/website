@@ -2750,6 +2750,124 @@ textarea {
   line-height: 1.6;
 }
 
+/* Book a demo */
+
+.section-anchor {
+  display: block;
+  scroll-margin-top: 88px;
+}
+
+.demo-book-section {
+  padding: 56px 24px 16px;
+  background: var(--bg);
+}
+
+.demo-book-section + .about-section {
+  padding-top: 40px;
+}
+
+.demo-book-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 56px;
+  align-items: start;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.demo-book-steps-card {
+  align-self: end;
+  padding: 32px 28px;
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.demo-book-intro {
+  max-width: var(--max);
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.demo-book-intro h2,
+.demo-book-steps-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.demo-book-intro p {
+  margin: 0 auto 24px;
+  max-width: 560px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.demo-book-intro .cta-actions {
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.demo-book-steps-lead {
+  margin: 0 0 8px;
+  max-width: 420px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.demo-book-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.demo-book-steps li {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 20px;
+  align-items: start;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.demo-book-steps li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.demo-book-step-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.demo-book-step-desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.demo-book-pilot-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-book-pilot-wrap .cta-divider {
+  margin: 20px 0 18px;
+}
+
+.demo-book-pilot-wrap .pilot-form-submit {
+  width: auto;
+}
+
+.demo-book-pilot-wrap .pilot-form-success {
+  text-align: left;
+}
+
 .cta-illo {
   position: absolute;
   color: var(--illo-stroke);
@@ -3020,6 +3138,24 @@ textarea {
     overflow-x: auto;
     flex-wrap: nowrap;
     justify-content: flex-start;
+  }
+
+  .demo-book-steps-card {
+    align-self: start;
+  }
+
+  .demo-book-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .demo-book-steps li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .demo-book-pilot-wrap .pilot-form-submit {
+    width: 100%;
   }
 
   .persona-tab {
